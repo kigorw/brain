@@ -1,0 +1,77 @@
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0px 0px 10px 0px;
+}
+
+ul {
+	padding-left: 16px;
+}
+
+form label {
+	display: block;
+	clear: left;
+}
+
+form label span {
+	display: block;
+	float: left;
+	width: 100px;
+}
+
+form label span + input {
+	float: left;
+}
+
+form button {
+	display: block;
+	clear: left;
+	margin-left: 100px;
+}
+
+section,
+article,
+aside {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+section {
+	border: 1px solid #ccc;
+}
+
+article {
+	border: 1px solid #ddd;
+}
+
+.auth {
+	background-color: #f0f0f8;
+}
+
+.users {
+	float: left;
+	width: 48%;
+}
+
+.notes {
+	float: right;
+	width: 48%;
+}
+
+.notes article {
+	float: left;
+	margin-right: 20px;
+}
+
+.notes h3 {
+	clear: left;
+}
+
+.info {
+	clear: both;
+	display: none;
+	border: 1px solid #ddd;
+	background-color: #fffff0;
+}
+
+.info.visible {
+	display: block;
+}
