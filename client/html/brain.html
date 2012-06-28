@@ -4,6 +4,8 @@
 
 <body>
 Hello world
+{{> loginButtons}}
+{{> registered }}
 <div class="signals">
 	{{> signals}}
 </div>
@@ -24,4 +26,8 @@ Hello world
   	<h2>{{title}}</h2>
   	<div class="text">{{text}}</div>
   </li>
+</template>
+
+<template name="registered">
+	<div id="registerStatus">{{registered}}</div>
 </template>

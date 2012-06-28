@@ -6,6 +6,8 @@
 // for each write operation. Methods can access this.userId() to perform
 // any access checking they like.
 
+
+
 Meteor.startup(function() {
   // which collections to control.
   var collectionMap = {signals: Signals, tags: Tags};
