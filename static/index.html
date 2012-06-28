@@ -5,6 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".filter a").click(function(){
+				$(".filter a").removeClass("active");
+				$(this).addClass("active");
+			})
+		})
+	</script>
 </head>
 <body>
 	<div class="wrapper">
@@ -14,13 +23,13 @@
 		</nav>
 		<div class="content">
 			<div class="filter">
-				<a class="first active" href="/signals">Все</a><a class="last" href="/signals/my">Только мои</a>
+				<a class="first active" href="#">Все</a><a href="#">Избранные</a><a class="last" href="#">Только мои</a>
 			</div>
 			<table class="signals">
 				<tr>
 					<td class="info">
-						<a class="title" href="signal.html">Современное школьное образование<i class="ico star-ico"></i></a>
-						<p class="signal-data">
+						<a class="title" href="signal.html">Современное школьное образование</a>
+						<p class="data">
 							<strong class="who">eugene</strong>
 							<span class="he-she">написал</span>
 							<span class="when">сегодня</span>
@@ -29,9 +38,29 @@
 				</tr>
 				<tr>
 					<td class="info">
-						<a class="title" href="signal.html">NVIDIA потеряла контракт с Китаем на поставку видеокарт для 10 млн Linux-компьютеров<i class="ico star-ico"></i></a>
-						<p class="signal-data">
+						<a class="title" href="signal.html">NVIDIA потеряла контракт с Китаем на поставку видеокарт для 10 млн Linux-компьютеров</a>
+						<p class="data">
 							<strong class="who">eugene</strong>
+							<span class="he-she">написал</span>
+							<span class="when">сегодня</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="info">
+						<a class="title" href="signal.html">Современные аналоговые компьютеры: есть будущее?</a>
+						<p class="data">
+							<strong class="who">tansky</strong>
+							<span class="he-she">написал</span>
+							<span class="when">сегодня</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="info">
+						<a class="title" href="signal.html">Google Glass будут продаваться по 1.5 тысяч долларов за единицу, количество ограничено</a>
+						<p class="data">
+							<strong class="who">kigorw</strong>
 							<span class="he-she">написал</span>
 							<span class="when">сегодня</span>
 						</p>

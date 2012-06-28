@@ -50,6 +50,7 @@ button{
 	background: -o-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
 	background: -ms-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
 	background: linear-gradient(to bottom,  #6ca6f6 1%,#3771bf 100%);
+	margin-bottom: 1em;
 }
 button:hover{
 	background: #72aeff;
@@ -73,6 +74,10 @@ button:active{
 .content{
 	max-width: 570px;
 	padding: 0 40px;
+	padding-bottom: 2em;
+}
+.shadow{
+	box-shadow:0 5px 70px #999;
 }
 
 
@@ -210,19 +215,17 @@ button:active{
 	line-height: 1.25em;
 	font-weight: normal;
 }
-.signals .signal-data{
+.signals .data{
 	padding: 0;
-}
-.signal-data .who, .signal-data .he-she, .signal-data .when{
-	font-size: 0.75em;
-	line-height: 1.25em;
-	color: #b2b2b2;
 }
 
 
 
 /*Article*/
 /*-------------------------------------------------*/
+.signal-text{
+
+}
 .signal-text .signal-data{
  margin-bottom: 0.325em;
 }
@@ -234,10 +237,35 @@ button:active{
 
 
 
+/*Comments*/
+/*-------------------------------------------------*/
+.comments{
+	clear:both;
+}
+.comments header{
+	margin:2em 0 1.5em;
+	padding-left: 1px;
+}
+.comments header .add-comment-link{
+	margin-left:1em;
+	font-size:0.875em;
+}
+.comments .comment{
+	padding:0.5em 1em 0.2em;
+	background-color: #FFF;
+	border-radius: 5px;
+	margin-bottom: 1.5em;
+}
+.comments .comment .text{
+	margin-top: -0.813em;
+}
+
+
+
 /*Add Signal Page*/
 /*-------------------------------------------------*/
 .signal-add{
- margin-top: 2.5em;
+ margin: 1.5em 0;
 }
 .signal-add .title-f{
 	width: 100%;
@@ -254,6 +282,29 @@ button:active{
 	min-height:20em;
 	margin-bottom: 1.5em;
 	border: 1px solid #bbb;
+}
+
+
+
+/*Other*/
+/*-------------------------------------------------*/
+.inln{
+	display: inline;
+}
+.pseudo{
+	border-bottom:1px dotted;
+	cursor:pointer;
+}
+.data .who, .data .he-she, .data .when{
+	font-size: 0.75em;
+	line-height: 1.25em;
+	color: #b2b2b2;
+}
+.data .anchor{
+	font-size: 1em;
+	line-height: 1.25em;
+	color: #b2b2b2;
+	float: right;
 }
 
 
