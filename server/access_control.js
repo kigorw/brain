@@ -8,7 +8,7 @@
 
 Meteor.startup(function() {
   // which collections to control.
-  var collectionMap = {signals: Signals};
+  var collectionMap = {signals: Signals, tags: Tags};
 
   _.each(collectionMap, function(collection, collectionName) {
     _.each(['update', 'remove'], function(method) {

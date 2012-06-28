@@ -1,7 +1,10 @@
-Meteor.publish("publishedNotes", function () {
-	
+Meteor.publish('signals', function () {
+  return Signals.find();
 });
 
-Meteor.publish("publishedUsers", function (sessionToken) {
-
+Meteor.publish("tags", function () {
+	return Tags.find();
 });
+Meteor.publish("users", function() {
+	return Meteor.users.find();
+})

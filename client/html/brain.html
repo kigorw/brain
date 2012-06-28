@@ -4,7 +4,24 @@
 
 <body>
 Hello world
-    <div class="login-bar">
-      {{> loginButtons}}
-    </div>
+<div class="signals">
+	{{> signals}}
+</div>
+
 </body>
+
+
+<template name="signals">
+    <ul id="item-list">
+      {{#each signals}}
+        {{> signal}}
+      {{/each}}
+    </ul>
+</template>
+
+<template name="signal">
+  <li class="signal">
+  	<h2>{{title}}</h2>
+  	<div class="text">{{text}}</div>
+  </li>
+</template>
