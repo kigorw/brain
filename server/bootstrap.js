@@ -4,7 +4,7 @@ Meteor.startup(function () {
 	Tags.remove({});
 	Meteor.users.remove({});
 */
-	console.log("start", Signals.find().count())
+	//console.log("start", Signals.find().count())
 
 	if (Signals.find().count() != 0) return;
 

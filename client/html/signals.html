@@ -1,0 +1,20 @@
+<template name="signals">
+    <ul id="item-list">
+      {{#each signals}}
+        {{> signal_item}}
+      {{/each}}
+    </ul>
+</template>
+
+<template name="signal_item">
+  <li class="signal-item">
+  	<h2><a data-url="{{url}}" href="/signals/{{url}}">{{title}}</a></h2>
+  	<div class="text">{{text}}</div>
+  </li>
+</template>
+
+<template name="signal">
+	<div class="signal">
+		{{signal.text}}
+	</div>
+</template>

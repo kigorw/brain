@@ -1,5 +1,5 @@
 var AllowedEmails = [
-  "k1igorw@gmail.com",
+  "kigorw@gmail.com",
   "e.chechurin@gmail.com",
   "byorickq@gmail.com"
 ]
@@ -24,20 +24,35 @@ Meteor.methods({
 	}
 })
 
-/*
-  // Always publish the current user's record to the client.
-Meteor.publish(null, function() {
-    if (this.userId())
-      return userAllowed(this.userId())
-    else
-      return null;
-}, {is_auto: true});
-*/
+
+
 
 Meteor.publish('signals', function () {
   if(!userAllowed(this)) return [];
-  return Signals.find();
+  return Signals.find({}, {
+  	title:1, 
+  	url: 1, 
+  	date: 1, 
+  	sort: {date: 1}
+  });
+  //только те которые имеет право видеть
+
 });
+
+
+/*
+Meteor.publish('signal', function (url) {
+  if(!userAllowed(this)) return [];
+  console.log("signal url", url, Signals.findOne({
+  	url: url
+  }))
+  return Signals.findOne({
+  	url: url
+  });
+});
+*/
+
+
 
 Meteor.publish("tags", function () {
 	if(!userAllowed(this)) return [];
