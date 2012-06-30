@@ -37,32 +37,6 @@ li:before{
 p{
 	padding-bottom: 1em;
 }
-button{
-	border-radius: 3px;
-	box-shadow: 0 1px 3px #bbb, 0 1px 1px #aaa ;
-	border: none;
-	font-size:1.325em;
-	color: #fff;
-	padding:7px 20px;
-	text-shadow:0 1px 1px #3461a2;
-	background: #6ca6f6;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#6ca6f6), color-stop(100%,#3771bf)); 
-	background: -o-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
-	background: -ms-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
-	background: linear-gradient(to bottom,  #6ca6f6 1%,#3771bf 100%);
-	margin-bottom: 1em;
-}
-button:hover{
-	background: #72aeff;
-	background: -webkit-linear-gradient(top,  #72aeff 0%,#3670be 100%); 
-	background: -o-linear-gradient(top,  #72aeff 0%,#3670be 100%);
-	background: -ms-linear-gradient(top,  #72aeff 0%,#3670be 100%);
-	background: linear-gradient(to bottom,  #72aeff 0%,#3670be 100%);
-}
-button:active{
-	box-shadow: 0 1px 0px #aaa;
-	margin-top:1px;
-}
 
 
 
@@ -74,7 +48,7 @@ button:active{
 .content{
 	max-width: 570px;
 	padding: 0 40px;
-	padding-bottom: 2em;
+	padding-bottom: 3em;
 }
 .shadow{
 	box-shadow:0 5px 70px #999;
@@ -153,7 +127,7 @@ button:active{
 /*Filter*/
 /*-------------------------------------------------*/
 .filter{
-	margin-left: 1px;
+	margin-left: -1px;
 	margin-top:1.375em;
 }
 .filter a{
@@ -251,13 +225,19 @@ button:active{
 	font-size:0.875em;
 }
 .comments .comment{
-	padding:0.5em 1em 0.2em;
+	padding:0.5em 1em 0.2em 2.5em;
 	background-color: #FFF;
 	border-radius: 5px;
-	margin-bottom: 1.5em;
+	margin:0 0 2em 1em;
+	position: relative;
 }
 .comments .comment .text{
 	margin-top: -0.813em;
+}
+.comments .comment .avatar{
+	position: absolute;
+	left:-0.813em;
+	top:-0.813em;
 }
 
 
@@ -267,7 +247,12 @@ button:active{
 .signal-add{
  margin: 1.5em 0;
 }
-.signal-add .title-f{
+
+
+
+/*Controls*/
+/*-------------------------------------------------*/
+.title-f{
 	width: 100%;
 	font-size: 2em;
 	line-height: 1.15em;
@@ -276,12 +261,41 @@ button:active{
 	margin-bottom: 1em;
 	border: 1px solid #bbb;
 }
-.signal-add .text-f{
+.text-f{
 	width: 100%;
 	padding: 7px 9px;
-	min-height:20em;
 	margin-bottom: 1.5em;
 	border: 1px solid #bbb;
+	min-height: 20em;
+}
+.normal-f{
+	min-height: 10em;
+}
+button{
+	border-radius: 3px;
+	box-shadow: 0 1px 3px #bbb, 0 1px 1px #aaa ;
+	border: none;
+	font-size:1.325em;
+	color: #fff;
+	padding:7px 20px;
+	text-shadow:0 1px 1px #3461a2;
+	background: #6ca6f6;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#6ca6f6), color-stop(100%,#3771bf)); 
+	background: -o-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
+	background: -ms-linear-gradient(top,  #6ca6f6 1%,#3771bf 100%);
+	background: linear-gradient(to bottom,  #6ca6f6 1%,#3771bf 100%);
+	margin-bottom: 1em;
+}
+button:hover{
+	background: #72aeff;
+	background: -webkit-linear-gradient(top,  #72aeff 0%,#3670be 100%); 
+	background: -o-linear-gradient(top,  #72aeff 0%,#3670be 100%);
+	background: -ms-linear-gradient(top,  #72aeff 0%,#3670be 100%);
+	background: linear-gradient(to bottom,  #72aeff 0%,#3670be 100%);
+}
+button:active{
+	box-shadow: 0 1px 0px #aaa;
+	margin-top:1px;
 }
 
 
@@ -305,6 +319,13 @@ button:active{
 	line-height: 1.25em;
 	color: #b2b2b2;
 	float: right;
+}
+.avatar{
+	width: 40px;
+	height: 40px;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px #bbb;
+	margin:2px 6px 0 0;
 }
 
 
