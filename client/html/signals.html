@@ -1,20 +1,45 @@
 <template name="signals">
-    <ul id="item-list">
+{{# unless signal_selected}}
+    <div class="signals" id="item-list">
       {{#each signals}}
         {{> signal_item}}
       {{/each}}
-    </ul>
+    </div>
+{{/unless}}
+</template>
+
+<template name="user_info">
+	<p class="data">
+		<strong class="who">{{user}}</strong>
+		<span class="he-she">написал</span>
+		<span class="when">{{date_ago date}}</span>
+	</p>
 </template>
 
 <template name="signal_item">
-  <li class="signal-item">
-  	<h2><a data-url="{{url}}" href="/signals/{{url}}">{{title}}</a></h2>
-  	<div class="text">{{text}}</div>
-  </li>
+  <table>
+	<tr>
+		<td>
+			<div class="avatar" style="background: url(http://avatars.io/email/{{email}}) center center"></div>
+		</td>
+		<td class="info">
+			<a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
+			{{> user_info}}
+		</td>
+	</tr>
+  </table>
 </template>
 
 <template name="signal">
-	<div class="signal">
-		{{signal.text}}
-	</div>
+	{{# if signal_selected}}
+	<article class="signal-text">
+		{{#with signal}}
+		<h1>{{title}}</h1>
+			{{> user_info }}
+		<div class='typo'>
+			{{text}}
+		</div>
+		{{/with}}
+	</article>
+	{{/if}}
 </template>
