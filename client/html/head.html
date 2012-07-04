@@ -1,7 +1,13 @@
 <template name="head">
-<nav class="main-menu">
-	<a class="active" href="/signals">Сигналы</a>
-	<a class="icon-plus" href="add.html">Добавить сигнал</a>
+<!--
+classes:
+	signal
+	add
+-->
+<nav id="main-menu" class="main-menu">
+	<a class="item-signals" href="/signals">Сигналы</a>
+	<a class="item-add" href="add.html">Добавить сигнал</a>
+
 		{{> loginButtons}}
 		{{> registered }}
 </nav>

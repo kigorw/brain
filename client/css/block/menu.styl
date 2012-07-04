@@ -1,0 +1,72 @@
+/*Main menu*/
+/*-------------------------------------------------*/
+.main-menu {
+	&.signal {
+
+	}
+}
+
+
+.main-menu{
+	height: 35px;
+	padding-top: 10px;
+	padding-left: 40px;
+	background: #4a4a4a;
+	background: -webkit-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+	background: -o-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+	background: -ms-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+	background: linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+	border-bottom: 1px solid #fff;
+}
+.main-menu a {
+	color: #dbdbdb;
+	font-size: 0.875em;
+	margin-right: 1em;
+	position: relative;
+	text-shadow: 0 1px 2px #000;
+	border-bottom: none;
+}
+.main-menu a:hover{
+	color: #fff;
+}
+.main-menu a.active{
+	pointer-events: none;
+}
+.main-menu a.active:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 5px solid;
+	left: 50%;
+	bottom: -15px;
+	margin-left: -5px;
+	border-color:	transparent	transparent #fff	transparent;
+}
+.main-menu a.current{
+	border-radius:3px;
+	color: #454545;
+	margin-left: -1px;
+	font-size: 0.813em;
+	text-shadow: 0 1px 2px #fff;
+	padding: 2px 14px 3px 10px;
+	box-shadow:0 1px 2px #000;
+	background: #ffffff; 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#ffffff), color-stop(100%,#f0f0f0));
+	background: -webkit-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: -o-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: -ms-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+}
+.main-menu a.current:hover{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#ffffff), color-stop(100%,#fafafa));
+	background: -webkit-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: -o-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: -ms-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+}
+.main-menu a.current:active{
+	vertical-align: -1px;
+	box-shadow: 0 1px 0px #000;
+	margin-top:1px;
+}
