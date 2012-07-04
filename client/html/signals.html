@@ -1,13 +1,12 @@
 <template name="signals">
-{{# unless signal_selected}}
-    <div class="signals" id="item-list">
-      {{#each signals}}
-        {{> signal_item}}
-      {{/each}}
-    </div>
-{{/unless}}
+    {{# unless signal_selected}}
+        <div class="signals" id="item-list">
+            {{#each signals}}
+                {{> signal_item}}
+            {{/each}}
+        </div>
+    {{/unless}}
 </template>
-
 <template name="user_info">
 	<p class="data">
 		<strong class="who">{{user}}</strong>
@@ -31,15 +30,27 @@
 </template>
 
 <template name="signal">
-	{{# if signal_selected}}
-	<article class="signal-text">
-		{{#with signal}}
-		<h1>{{title}}</h1>
-			{{> user_info }}
-		<div class='typo'>
-			{{text}}
-		</div>
-		{{/with}}
-	</article>
-	{{/if}}
+    {{# if signal_selected}}
+    <article class="signal-text">
+        {{#with signal}}
+        <h1>{{title}}</h1>
+            {{> user_info }}
+        <div class='typo'>
+            {{text}}
+        </div>
+        {{/with}}
+    </article>
+    {{/if}}
+</template>
+
+<template name="signal_add">
+    <article class="signal-add">
+        <form>
+            <input class="title-f" name="title" placeholder="Заголовок">
+            <input class="title-f" name="url" placeholder="url">
+            <textarea class="text-f" name="body" placeholder="Текст"></textarea>
+            <input class="title-f" name="url" placeholder="Мозги" value="kigorw, maycry, zheneva">
+            <button type="commit">Опубликовать сигнал</button>
+        </form>
+    </article>
 </template>
