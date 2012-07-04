@@ -1,0 +1,36 @@
+grad2(c1,p1, c2,p2) {
+    background: c1;
+    background: -moz-linear-gradient(top, c1 p1, c2 p2);
+    background: -webkit-linear-gradient(top, c1 p1,c2 p2);
+    background: linear-gradient(top, c1 p1,c2 p2);
+}
+transform() {
+  -webkit-transform:rotate(arguments);
+  -moz-transform:rotate(arguments);
+  -ms-transform:rotate(arguments);
+  transform:rotate(arguments);
+}
+
+transition() {
+  -webkit-transition:arguments
+  -moz-transition:arguments
+  transition:arguments  
+}
+
+box-shadow() { 
+  -webkit-box-shadow: arguments;
+  -moz-box-shadow: arguments;
+  box-shadow: arguments;
+}
+
+border-radius() {
+  -webkit-border-radius: arguments
+  -moz-border-radius: arguments
+  border-radius: arguments
+}
+
+no-select() {
+    -webkit-user-select:none;
+    -moz-user-select: none;
+    user-select: none;
+}

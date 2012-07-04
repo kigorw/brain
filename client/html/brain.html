@@ -3,22 +3,22 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div data-page="signals" class="wrapper p-signals">
 		{{> head}}
-		<div class="content">
-			<div class="filter">
-				<a class="first active" href="#">Все</a><a href="#">Избранные</a><a class="last" href="#">Только мои</a>
-			</div>
+		<div class="content">	
 
-			
-			<div class="signal-view">
+			<div class="v-signal page-view">
 				{{> signal	}}
 			</div>
 
-			<div class="signals">
+			<div class="v-signals page-view">
+				<div class="filter">
+				<a class="first active" href="#">Все</a><a href="#">Избранные</a><a class="last" href="#">Только мои</a>
+				</div>
 				{{> signals}}
 			</div>
 
+			<div class="v-add page-view">hiiii</div>
 
 		</div>
 	</div>
