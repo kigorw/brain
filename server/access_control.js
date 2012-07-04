@@ -9,6 +9,7 @@
 
 
 Meteor.startup(function() {
+    return;
   // which collections to control.
   var collectionMap = {signals: Signals, tags: Tags};
 

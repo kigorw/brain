@@ -7,8 +7,6 @@ Meteor.autosubscribe(function () {
 
 	});
 
-
-
 	Meteor.subscribe('users', function () {
 
 	});
