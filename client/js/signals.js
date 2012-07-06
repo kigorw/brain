@@ -39,7 +39,6 @@ Template.signal_add.events = {
             user: user.username
         }
         console.log("insert signal", signal)
-        Signals.insert(signal, Router.navigate('/'))
-        
+        Signals.insert(signal)
     }
 }
