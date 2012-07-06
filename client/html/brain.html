@@ -3,17 +3,27 @@
 </head>
 
 <body>
-{{> loginButtons}}
-{{> registered }}
-<br>
-<div class="signal-view">
-	{{> signal	}}
-</div>
+	<div data-page="signals" class="wrapper p-signals">
+		{{> head}}
+		<div class="content">	
 
-<div class="signals">
-	{{> signals}}
-</div>
+			<div class="v-signal page-view">
+				{{> signal }}
+			</div>
 
+			<div class="v-signals page-view">
+				<div class="filter">
+				<a class="first active" href="#">Все</a><a href="#">Избранные</a><a class="last" href="#">Только мои</a>
+				</div>
+				{{> signals }}
+			</div>
+
+            <div class="v-add page-view">
+                {{> signal_add }}
+            </div>
+
+		</div>
+	</div>
 
 
 </body>

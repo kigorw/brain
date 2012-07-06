@@ -14,19 +14,22 @@ Meteor.startup(function () {
 			emails: "kigorw@gmail.com",
 			pass: "password",
 			name: "Igor Kononuchenko",
+			gender: "male"
 
 		},
 		{
 			username: "zheneva",
 			emails: "e.chechurin@gmail.com",
 			pass: "password",
-			name: "Eugene Chechurin"
+			name: "Eugene Chechurin",
+			gender: "male"
 		},
 		{
 			username: "maycry",
 			emails: "byorickq@gmail.com",
 			pass: "password",
-			name: "Yuri Tansky"
+			name: "Yuri Tansky",
+			gender: "male"
 		}
 	];
 
@@ -38,6 +41,7 @@ Meteor.startup(function () {
 				url: "derby-vs-meteor",
 				text: "Автор дерби написал хорошую статью о сравнении подходов http://blog.derbyjs.com/2012/04/14/our-take-on-derby-vs-meteor",
 				users: ["maycry", "zheneva"],
+				email: "kigorw@gmail.com",
 				private: true,
 				tags: ["JavaScript", "Derby", "Meteor", "Toolbox"],
 				date: timestamp
@@ -46,6 +50,7 @@ Meteor.startup(function () {
 				title: "Книга о жизни",
 				url: "life-book",
 				users: ["maycry", "zheneva"],
+				email: "kigorw@gmail.com",
 				text: "Замечательная книга о том как крутой чел был в море и потом купил себе велосипед потом поехал домой и выпустил пар",
 				tags: ["Reading"],
 				date: timestamp+1000
@@ -57,6 +62,7 @@ Meteor.startup(function () {
 				title: "Роль JavaScript в Асане",
 				url: "asana-js",
 				users: ["kigorw", "maycry"],
+				email: "e.chechurin@gmail.com",
 				text: "В Асане особо важную роль играет понимание процессов взаимодействия между фреймворком и байдой. Там юзают самые совершенные технологии",
 				tags: ["JavaScript"],
 				date: timestamp+2000
@@ -66,6 +72,7 @@ Meteor.startup(function () {
 				url: "book-see",
 				private: true,
 				users: ["kigorw", "maycry"],
+				email: "e.chechurin@gmail.com",
 				text: "Замечательная книга о том как крутой чел был в море и потом купил себе велосипед потом поехал домой и выпустил пар",
 				tags:["Meteor"],
 				date: timestamp+3000
@@ -88,6 +95,8 @@ Meteor.startup(function () {
 		for (var i = 0; i < userSignals.length; i++) {
 			var signal = userSignals[i]
 			signal.user = username;
+			//var u = users.filter(function(u) {return u.username == username;})[0];
+			//signal.email = u.emails;
 			Signals.insert(signal)
 			console.log("insert signal", signal);
 		}

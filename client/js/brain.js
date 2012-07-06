@@ -7,8 +7,6 @@ Meteor.autosubscribe(function () {
 
 	});
 
-
-
 	Meteor.subscribe('users', function () {
 
 	});
@@ -18,26 +16,3 @@ Meteor.autosubscribe(function () {
 	});
 
 });
-
-
-var BrainRouter = Backbone.Router.extend({
-  routes: {
-    "signals/:url": "signal",
-  },
-  signal: function (url) {
-  	debugger;
-    Session.set("signal", url);
-    Session.set("tag_filter", null);
-  },
-  setSignal: function(url) {
-  	this.navigate("/signals/"+url)
-  }
-
-});
-
-Router = new BrainRouter;
-
-Meteor.startup(function () {
-  Backbone.history.start({pushState: true});
-});
-
