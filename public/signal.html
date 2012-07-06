@@ -4,15 +4,22 @@
 	<meta name="viewport" content="width=device-width" />  
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/fontello.css"> -->
 </head>
 <body>
-	<div class="wrapper shadow">
-		<nav class="main-menu">
-			<a class="current icon-left-dir" href="index.html">Сигналы</a>
-			<a class="icon-plus" href="add.html">Добавить сигнал</a>
-		</nav>
+	<div class="wrapper">
+		<header class="top">
+        <nav class="main-menu">
+          <a class="current" href="/signals">Сигналы</a>
+          <a class="black-btn" href="#">Добавить сигнал</a>
+        </nav>
+        <div class="profile">
+        	<div class="avatar flft" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+        	<a href="/logout">Выйти</a>
+      	</div>
+      </header>
 		<div class="content">
+
 			<article class="signal-text">
 				<h1>Современное школьное образование</h1>
 				<p class="data">
@@ -35,44 +42,43 @@
 				<img src="http://images.astronet.ru/pubd/2008/02/04/0001225908/VenJupMorn_tafreshi.jpg">
 				<p>Учился в Петербурге, не в самом последнем ВУЗе. Немного работал со школьниками. Сейчас веду, как сказали бы у нас, упры и лабы по физике в одном из ТОП10 университетов мира (в США), будучи аспирантом. Глядя вокруг, я стал думать о том, почему наше образование всё ещё ценится и что же конкретно в нём такое хорошее.</p>
 			</article>
-		</div>
-	</div>
-	<div class="content">
-		<div class="comments">
-			<header>
-				<h3 class="inln">Комментарии</h3><span class="add-comment-link pseudo">Добавить комментарий</span>
-			</header>
-			<div class="comment">
-				<div class="avatar" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
-				<p class="data">
-					<strong class="who">eugene</strong>
-					<span class="he-she">написал</span>
-					<span class="when">сегодня</span>
-					<span class="anchor pseudo">#</span>
-				</p>
-				<div class="text">
-					<p>Учился в Петербурге, не в самом последнем ВУЗе. Немного работал со школьниками. Сейчас веду, как сказали бы у нас, упры и лабы по физике в одном из ТОП10 университетов мира (в США), будучи аспирантом.</p>
+			<div class="comments">
+				<div class="separator-shadow"></div>
+				<header>
+					<h3 class="inln">Комментарии</h3><span class="add-comment-link pseudo">Добавить комментарий</span>
+				</header>
+				<div class="comment">
+					<div class="avatar" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+					<p class="data">
+						<strong class="who">eugene</strong>
+						<span class="he-she">написал</span>
+						<span class="when">сегодня</span>
+						<span class="anchor pseudo">#</span>
+					</p>
+					<div class="text">
+						<p>Учился в Петербурге, не в самом последнем ВУЗе. Немного работал со школьниками. Сейчас веду, как сказали бы у нас, упры и лабы по физике в одном из ТОП10 университетов мира (в США), будучи аспирантом.</p>
+					</div>
 				</div>
-			</div>
-			<div class="comment">
-				<div class="avatar" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
-				<p class="data">
-					<strong class="who">eugene</strong>
-					<span class="he-she">написал</span>
-					<span class="when">сегодня</span>
-					<span class="anchor pseudo">#</span>
-				</p>
-				<div class="text">
-					<p>Учился в Петербурге, не в самом последнем ВУЗе. Немного работал со школьниками. Сейчас веду, как сказали бы у нас, упры и лабы по физике в одном из ТОП10 университетов мира (в США), будучи аспирантом.</p>
+				<div class="comment">
+					<div class="avatar" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+					<p class="data">
+						<strong class="who">eugene</strong>
+						<span class="he-she">написал</span>
+						<span class="when">сегодня</span>
+						<span class="anchor pseudo">#</span>
+					</p>
+					<div class="text">
+						<p>Учился в Петербурге, не в самом последнем ВУЗе. Немного работал со школьниками. Сейчас веду, как сказали бы у нас, упры и лабы по физике в одном из ТОП10 университетов мира (в США), будучи аспирантом.</p>
+					</div>
 				</div>
+				<header>
+					<h3>Добавить комментарий</h3>
+				</header>
+				<form class="add-comment">
+					<textarea class="text-f normal-f" placeholder="Текст комментария"></textarea>
+					<button type="commit">Опубликовать комментарий</button>
+				</form>
 			</div>
-			<header>
-				<h3>Добавить комментарий</h3>
-			</header>
-			<form class="add-comment">
-				<textarea class="text-f normal-f" placeholder="Текст комментария"></textarea>
-				<button type="commit">Опубликовать комментарий</button>
-			</form>
 		</div>
 	</div>
 </body>
