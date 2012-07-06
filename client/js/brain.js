@@ -3,7 +3,7 @@ Meteor.autosubscribe(function () {
 	var user = Meteor.user();
 	if(!user) return;
 
-	Meteor.subscribe('signals', function () {
+	Meteor.subscribe('signals', Session.get("signal_filter") , function () {
 
 	});
 

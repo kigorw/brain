@@ -25,6 +25,17 @@ Template.signal.signal = function() {
 	return signal 
 }
 
+
+
+Template.signal_filter.events = {
+    "click a": function(e) {
+        var type = e.target.dataset.type
+        Router.setSignalFilter(type, true);
+        e.preventDefault();
+    }
+
+}
+
 Template.signal_add.events = {
     'click button': function(e) {
         var user = Meteor.user(),

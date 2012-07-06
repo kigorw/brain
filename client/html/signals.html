@@ -1,5 +1,13 @@
+<template name="signal_filter">
+    <div class="filter">
+    <a data-type="*" class="first" href="/signals">Все</a><a data-type="favorites" href="/favorites">Избранные</a><a data-type="my" class="last" href="/signals/my">Только мои</a>
+    </div>
+</template>
+
 <template name="signals">
+
     {{# unless signal_selected}}
+        {{> signal_filter}}
         <div class="signals" id="item-list">
             {{#each signals}}
                 {{> signal_item}}

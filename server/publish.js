@@ -6,6 +6,7 @@ var AllowedEmails = [
 
 function userAllowed(request, userId) {
 	var user = Meteor.users.findOne({_id: userId || request.userId()})
+	
 	for (var i = 0; i < AllowedEmails.length; i++) {
 		var email = AllowedEmails[i];
 		if(!user) return null;
@@ -27,13 +28,22 @@ Meteor.methods({
 
 
 
-Meteor.publish('signals', function () {
-  if(!userAllowed(this)) return [];
-  return Signals.find({}, {
+Meteor.publish('signals', function (clientFilter) {
+  var user = userAllowed(this)
+    console.log("client filter", clientFilter)
+  if(!user) return [];
+  var filter = {};
+  if(clientFilter && clientFilter.type == "my") {
+  	filter = {user: user.username};
+  }
+  console.log(filter)
+
+
+  return Signals.find(filter, {
   	title:1, 
   	url: 1, 
   	date: 1, 
-  	sort: {date: 1}
+  	sort: {date: -1}
   });
   //только те которые имеет право видеть
 
