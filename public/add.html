@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Brain — add</title>
+	<meta name="viewport" content="width=device-width" />  
+	<link rel="stylesheet" type="text/css" href="css/chosen.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".multiselect").chosen();
+		})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="top">
+        <nav class="main-menu">
+          <a class="" href="/signals">Сигналы</a>
+          <a class="black-btn current-black-btn" href="#">Добавить сигнал</a>
+        </nav>
+        <div class="profile">
+        	<div class="avatar flft" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+        	<a href="/logout">Выйти</a>
+      	</div>
+      	<input class="search-f" type="text" placeholder="Search">
+      </header>
+		<div class="content">
+			<article class="signal-add">
+				<form>
+					<input class="title-f" placeholder="Заголовок">
+					<textarea class="text-f" placeholder="Текст"></textarea>
+					<select class="multiselect" data-placeholder="Choose a Country" multiple="">
+            <option value="United States">United States</option> 
+            <option value="United Kingdom">United Kingdom</option> 
+            <option value="Afghanistan">Afghanistan</option> 
+            <option value="Albania">Albania</option> 
+            <option value="Algeria">Algeria</option> 
+          </select>
+					<button type="commit">Опубликовать сигнал</button>
+				</form>
+			</article>
+		</div>
+	</div>
+</body>
+</html>

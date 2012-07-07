@@ -1,0 +1,128 @@
+/*Main menu*/
+/*-------------------------------------------------*/
+active() {
+
+    pointer-events: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 5px solid;
+        left: 50%;
+        bottom: -15px;
+        margin-left: -5px;
+        border-color: transparent transparent #fff  transparent;
+    }
+
+}
+
+
+.top{
+    height: 34px;
+    padding: 8px 40px 0px;
+    background: #4a4a4a;
+    background: -webkit-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+    background: -o-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+    background: -ms-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+    background: linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+}
+.top .main-menu{
+    float:left;
+}
+.top .main-menu a{
+    color: #dbdbdb;
+    font-size: 0.875em;
+    margin-right: 1em;
+    position: relative;
+    text-shadow: 0 1px 2px #000;
+    border-bottom: none;
+}
+.top .main-menu a:hover{
+    color: #fff;
+}
+.top .main-menu a.active{
+    pointer-events: none;
+}
+.top .main-menu a.current:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid;
+    left: 50%;
+    bottom: -14px;
+    margin-left: -5px;
+    border-color:   transparent transparent #F0F0F0 transparent;
+}
+.top .main-menu a.current:active{
+    vertical-align: -1px;
+    box-shadow: 0 1px 0px #000;
+    margin-top:1px;
+}
+.top .profile{
+    padding-top: 1px;
+    float: right;
+}
+.top .profile a{
+    color: #999;
+    font-size: 0.813em;
+    text-shadow: 0 1px 2px #111;
+    border-bottom: none;
+    line-height: 2.1em;
+    margin-right: 0.65em;
+}
+.top .profile a:hover{
+    color: #bbb;
+}
+.top .profile .avatar{
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    margin-right: 0.65em;
+    margin-top: 0px
+}
+.search-f{
+    float: right;
+    width: 20%;
+    margin-right: 5%;
+    border-radius: 1em;
+    border: 1px solid #1e1e1e;
+    background-color: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.5em;
+    padding: 0.1em 0.5em;
+    outline: none;
+    font-size:0.875em;
+}
+.search-f:focus{
+    background-color: #eee;
+    color: #555;
+    border-color: #333;
+}
+
+.p-signals .v-signals {display: block;}
+.p-add .v-add {display: block;}
+.p-signal .v-signal {display: block;}
+
+
+.p-signals {
+    .main-menu {
+        .item-signals {
+            active()
+        }
+        
+    }
+}
+.p-add {
+    .main-menu {
+        .item-add {
+            active()
+        }
+        
+    }
+}
+
+
+

@@ -1,0 +1,21 @@
+<template name="head">
+<!--
+classes:
+	signal
+	add
+-->
+    <header class="top">
+      <nav class="main-menu">
+        <a class="current active" role="menu-item" data-page="signals" href="/signals">Сигналы</a>
+        <a class="black-btn" role="menu-item" data-page="add" href="#">Добавить сигнал</a>
+      </nav>
+
+      <div class="profile">
+        <div class="avatar flft" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+        <a href="/logout">Выйти</a>
+    	</div>
+      <input class="search-f" type="text" placeholder="Search">
+      
+      {{> registered }}
+    </header>
+</template>

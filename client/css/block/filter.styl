@@ -1,0 +1,48 @@
+/*Filter*/
+/*-------------------------------------------------*/
+.filter{
+	margin-left: -1px;
+	margin-top:1.375em;
+}
+.filter a{
+	margin-left: -1px;
+	font-size: 0.813em;
+	text-shadow: 0 1px 0 #fff;
+	padding: 2px 14px 3px;
+	border: 1px solid #d1d1d1;
+	box-shadow: 0 1px 0 #fff;
+	background: #ffffff; 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#ffffff), color-stop(100%,#f0f0f0));
+	background: -webkit-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: -o-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: -ms-linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+	background: linear-gradient(top,  #ffffff 40%,#f0f0f0 100%);
+}
+.filter a.active{
+	pointer-events: none;
+	box-shadow: 0 1px 0 #fff, inset 0 1px 3px #888;
+	background: #ddd; 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#ddd), color-stop(100%,#ffffff));
+	background: -webkit-linear-gradient(top,  #ddd 40%,#ffffff 100%);
+	background: -o-linear-gradient(top,  #ddd 40%,#ffffff 100%);
+	background: -ms-linear-gradient(top,  #ddd 40%,#ffffff 100%);
+	background: linear-gradient(top,  #ddd 40%,#ffffff 100%);
+
+}
+.filter a:hover{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#ffffff), color-stop(100%,#fafafa));
+	background: -webkit-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: -o-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: -ms-linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+	background: linear-gradient(top,  #ffffff 40%,#fafafa 100%);
+}
+.filter a.first{
+	border-top-left-radius:15px;
+	border-bottom-left-radius:15px;
+	padding-left: 16px;
+}
+.filter a.last{
+	border-top-right-radius:15px;
+	border-bottom-right-radius:15px;
+	padding-right: 16px;
+}

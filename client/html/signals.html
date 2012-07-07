@@ -1,0 +1,56 @@
+<template name="signals">
+    {{# unless signal_selected}}
+        <div class="signals" id="item-list">
+            {{#each signals}}
+                {{> signal_item}}
+            {{/each}}
+        </div>
+    {{/unless}}
+</template>
+<template name="user_info">
+	<p class="data">
+		<strong class="who">{{user}}</strong>
+		<span class="he-she">написал</span>
+		<span class="when">{{date_ago date}}</span>
+	</p>
+</template>
+
+<template name="signal_item">
+  <table>
+	<tr>
+		<td>
+			<div class="avatar" style="background: url(http://avatars.io/email/{{email}}) center center"></div>
+		</td>
+		<td class="info">
+			<a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
+			{{> user_info}}
+		</td>
+	</tr>
+  </table>
+</template>
+
+<template name="signal">
+    {{# if signal_selected}}
+    <article class="signal-text">
+        {{#with signal}}
+        <h1>{{title}}</h1>
+            {{> user_info }}
+        <div class='typo'>
+            {{text}}
+        </div>
+        {{/with}}
+    </article>
+    {{/if}}
+</template>
+
+<template name="signal_add">
+    <article class="signal-add">
+        <form>
+            <input class="title-f" name="title" placeholder="Заголовок">
+            <input class="title-f" name="url" placeholder="url">
+            <textarea class="text-f" name="body" placeholder="Текст"></textarea>
+            <input class="title-f" name="users" placeholder="Мозги" value="kigorw, maycry, zheneva">
+            <button type="commit">Опубликовать сигнал</button>
+        </form>
+    </article>
+</template>
