@@ -18,6 +18,20 @@ active() {
 
 }
 
+current() {
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 5px solid;
+        left: 50%;
+        bottom: -14px;
+        margin-left: -5px;
+        border-color:   transparent transparent #F0F0F0 transparent;
+    }
+}
+
 
 .top{
     height: 34px;
@@ -46,15 +60,7 @@ active() {
     pointer-events: none;
 }
 .top .main-menu a.current:after{
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 5px solid;
-    left: 50%;
-    bottom: -14px;
-    margin-left: -5px;
-    border-color:   transparent transparent #F0F0F0 transparent;
+
 }
 .top .main-menu a.current:active{
     vertical-align: -1px;
