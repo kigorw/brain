@@ -9,24 +9,23 @@
 </template>
 <template name="user_info">
 	<p class="data">
-		<strong class="who">{{user}}</strong>
-		<span class="he-she">написал</span>
-		<span class="when">{{date_ago date}}</span>
+        <strong class="who">{{user}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+        
+        <span class="he-she">написал</span>
+        <span class="when">{{date_ago date}}</span>
 	</p>
 </template>
+<template name="user_info_ava_name">
+    <p class="data">
+        <strong class="who">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i>
+    </p>
+</template>
 
-<template name="signal_item">
-  <table>
-	<tr>
-		<td>
-			<div class="avatar" style="background: url(http://avatars.io/email/{{email}}) center center"></div>
-		</td>
-		<td class="info">
-			<a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
-			{{> user_info}}
-		</td>
-	</tr>
-  </table>
+<template name="signal_item"> 
+  <div class="info">  
+    <a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
+    {{> user_info}}
+  </div>
 </template>
 
 <template name="signal">
@@ -40,6 +39,7 @@
         </div>
         {{/with}}
     </article>
+    <div class="whom"><label>Кому отправлен сигнал:</label> {{> user_info_ava_name }} {{> user_info_ava_name }}</div>
     {{/if}}
 </template>
 
