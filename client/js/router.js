@@ -20,11 +20,7 @@ BrainRouter = Backbone.Router.extend({
         } else {
           Session.set("signal_filter", {type: type}); 
         }
-        
-
-
-
-
+    
         if(navigate) {
           this.navigate("/signals"+url);
         }
