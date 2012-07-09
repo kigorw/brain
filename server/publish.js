@@ -1,7 +1,7 @@
 var AllowedEmails = [
   "kigorw@gmail.com",
   "e.chechurin@gmail.com",
-  "byorickq@gmail.com"
+  "byorickq@yandex.ru"
 ]
 
 function userAllowed(request, userId) {
