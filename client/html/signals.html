@@ -23,6 +23,17 @@
         <span class="when">{{date_ago date}}</span>
 	</p>
 </template>
+<template name="user_info_signal">
+    <p class="data">
+        <strong class="who">{{user}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+        
+        <span class="he-she">написал</span>
+        <span class="when">{{date_ago date}}</span>
+        <span class="for">для</span>
+        <strong class="who read">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+        <strong class="who">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+    </p>
+</template>
 <template name="user_info_ava_name">
     <p class="data">
         <strong class="who">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i>
@@ -41,13 +52,12 @@
     <article class="signal-text">
         {{#with signal}}
         <h1>{{title}}</h1>
-            {{> user_info }}
+            {{> user_info_signal }}
         <div class='typo'>
             {{text}}
         </div>
         {{/with}}
     </article>
-    <div class="whom"><label>Кому отправлен сигнал:</label> {{> user_info_ava_name }} {{> user_info_ava_name }}</div>
     <div class="comments">
         <div class="separator-shadow"></div>
         <header>

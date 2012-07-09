@@ -1,3 +1,4 @@
+@import "../util/vendor";
 /*Main*/
 /*-------------------------------------------------*/
 body{
@@ -51,10 +52,13 @@ p{
 	border-bottom:1px dotted;
 	cursor:pointer;
 }
-.data .who, .data .he-she, .data .when{
+.data .who, .data .he-she, .data .when, .data .for{
 	font-size: 0.75em;
 	line-height: 1.25em;
 	color: #b2b2b2;
+}
+.data .who.read{
+	opacity: 0.6;
 }
 .data .anchor{
 	font-size: 1em;
@@ -81,7 +85,7 @@ p{
 	display: inline-block;
 	vertical-align: -3px;
 	opacity: 0.6;
-	-webkit-transition: opacity 0.5s ease;
+	transition(opacity 0.5s ease);
 }
 
 
@@ -123,13 +127,7 @@ p{
 	padding: 4px 14px 6px 14px;
 	border: 1px solid #1e1e1e;
 	box-shadow: inset 0px 10px 0 rgba(255,255,255,0.07);
-	background: rgb(83,83,83);
-	background: -moz-linear-gradient(top,  rgba(83,83,83,1) 0%, rgba(31,31,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(83,83,83,1)), color-stop(100%,rgba(31,31,31,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(83,83,83,1) 0%,rgba(31,31,31,1) 100%);
-	background: -o-linear-gradient(top,  rgba(83,83,83,1) 0%,rgba(31,31,31,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(83,83,83,1) 0%,rgba(31,31,31,1) 100%); 
-	background: linear-gradient(to bottom,  rgba(83,83,83,1) 0%,rgba(31,31,31,1) 100%);
+	grad2(rgba(83,83,83,1), 0%,rgba(31,31,31,1), 100%);
 }
 .black-btn:hover{
 	background: rgb(91,91,91); /* Old browsers */
