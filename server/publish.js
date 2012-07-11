@@ -44,8 +44,9 @@ Meteor.publish('signals', function (clientFilter) {
     console.log("client filter", clientFilter)
   if(!user) return [];
   var filter = {};
-  if(clientFilter && clientFilter.type == "my") {
-  	filter = {user: user.username};
+  if(clientFilter) {
+    if(clientFilter.type == "my") filter = {user: user.username}
+    if(clientFilter.type == "favorites") filter = {favorites: user.username}
   }
   console.log(filter)
 

@@ -1,6 +1,6 @@
 <template name="signal_filter">
     <div class="filter">
-    <a data-type="*" class="first" href="/signals">Все</a><a data-type="favorites" href="/favorites">Избранные</a><a data-type="my" class="last" href="/signals/my">Только мои</a>
+    <a data-type="*" class="first" href="/signals">Все</a><a data-type="favorites" href="/signals/favorites">Избранные</a><a data-type="my" class="last" href="/signals/my">Только мои</a>
     </div>
 </template>
 
@@ -43,7 +43,7 @@
 
 <template name="signal_item"> 
   <div class="info">  
-    <a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
+      <a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
     {{> user_info}}<span class='comment-count'>{{comments}}</span>
   </div>
 </template>

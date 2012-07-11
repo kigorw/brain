@@ -3,6 +3,7 @@ BrainRouter = Backbone.Router.extend({
         "": "index",
         "signals/" : "index",
         "signals/my": "my",
+        "signals/favorites": "favorites",
         "signals/add": "add",
         "signals/:url": "signal",
     },
@@ -11,9 +12,14 @@ BrainRouter = Backbone.Router.extend({
         this.setSignalFilter("my")
     },
 
+    favorites: function() {
+        this.setSignalFilter("favorites")
+    },
+
     setSignalFilter: function(type, navigate) {
         this.pageClass("signals");
-         var url = "/"+type;
+        var url = "/"+type;
+        
         if(type=="*") {
           Session.set("signal_filter", null);
           url = "";

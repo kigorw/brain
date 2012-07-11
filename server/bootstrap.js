@@ -1,11 +1,4 @@
 Meteor.startup(function () {
-/*
-	Signals.remove({});
-	Tags.remove({});
-	Meteor.users.remove({});
-*/
-	//console.log("start", Signals.find().count())
-
 	if (Signals.find().count() != 0) return;
 
 	var users = [
@@ -41,6 +34,7 @@ Meteor.startup(function () {
 				url: "derby-vs-meteor",
 				text: "Автор дерби написал хорошую статью о сравнении подходов http://blog.derbyjs.com/2012/04/14/our-take-on-derby-vs-meteor",
 				users: ["maycry", "zheneva"],
+				favorites: ["zheneva"],
 				email: "kigorw@gmail.com",
 				private: true,
 				tags: ["JavaScript", "Derby", "Meteor", "Toolbox"],
@@ -51,6 +45,7 @@ Meteor.startup(function () {
 				title: "Книга о жизни",
 				url: "life-book",
 				users: ["maycry", "zheneva"],
+				favorites: ["kigorw"],
 				email: "kigorw@gmail.com",
 				text: "Замечательная книга о том как крутой чел был в море и потом купил себе велосипед потом поехал домой и выпустил пар",
 				tags: ["Reading"],
@@ -64,6 +59,7 @@ Meteor.startup(function () {
 				title: "Роль JavaScript в Асане",
 				url: "asana-js",
 				users: ["kigorw", "maycry"],
+				favorites: ["maycry"],
 				email: "e.chechurin@gmail.com",
 				text: "В Асане особо важную роль играет понимание процессов взаимодействия между фреймворком и байдой. Там юзают самые совершенные технологии",
 				tags: ["JavaScript"],
@@ -75,6 +71,7 @@ Meteor.startup(function () {
 				url: "book-see",
 				private: true,
 				users: ["kigorw", "maycry"],
+				favorites: ["kigorw"],
 				email: "e.chechurin@gmail.com",
 				text: "Замечательная книга о том как крутой чел был в море и потом купил себе велосипед потом поехал домой и выпустил пар",
 				tags:["Meteor"],
