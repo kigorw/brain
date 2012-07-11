@@ -1,3 +1,4 @@
+@import "../util/vendor"
 /*Main menu*/
 /*-------------------------------------------------*/
 active() {
@@ -32,15 +33,11 @@ current() {
     }
 }
 
-
 .top{
     height: 34px;
     padding: 8px 40px 0px;
     background: #4a4a4a;
-    background: -webkit-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
-    background: -o-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
-    background: -ms-linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
-    background: linear-gradient(top,  #4a4a4a 0%,#434343 72%,#313131 100%);
+    gradient(top,  #4a4a4a 0%, #434343 72%, #313131 100%);
 }
 .top .main-menu{
     float:left;
