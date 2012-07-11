@@ -26,6 +26,17 @@ Meteor.methods({
 })
 
 
+Meteor.publish('comments', function (signalUrl) {
+  if(!signalUrl) return;
+  var user = userAllowed(this)
+  if(!user) return [];
+
+  var signal = Signals.findOne({url: signalUrl});
+  return Comments.find({signal: signal._id}, {
+    sort: {date: 1}
+  });
+
+});
 
 
 Meteor.publish('signals', function (clientFilter) {

@@ -1,0 +1,19 @@
+<template name="loginStatus">
+  <div id="login-buttons">
+    {{#if currentUser}}
+      <div class="login-header">{{currentUser.name}}</div>
+      <div class="login-button" id="login-buttons-logout">Logout</div>
+    {{else}}
+      {{#if services}}
+        {{#each services}}
+          <div class="login-button" id="login-buttons-{{name}}">
+            <div class="login-image" id="login-buttons-image-{{name}}"></div>
+            Login with {{name}}
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="no-services">No login services configured.</div>
+      {{/if}}
+    {{/if}}
+  </div>
+</template>

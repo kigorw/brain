@@ -7,6 +7,11 @@ Meteor.autosubscribe(function () {
 
 	});
 
+
+	Meteor.subscribe('comments', Session.get("signal") , function () {
+
+	});
+
 	Meteor.subscribe('users', function () {
 
 	});

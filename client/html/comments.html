@@ -2,34 +2,39 @@
     <div class="comments">
         <div class="separator-shadow"></div>
         <header>
-            <h3 class="inln">Комментарии</h3><span class="add-comment-link pseudo">Добавить комментарий</span>
+            <h3 class="inln">Комментарии</h3><label for="txtComment" class="add-comment-link pseudo">Добавить комментарий</label>
         </header>
         {{#each comments}}
             {{> comment_item}}
         {{/each}}
 
-        <header>
-            <h3>Добавить комментарий</h3>
-        </header>
-        <form class="add-comment">
-            <textarea class="text-f normal-f" placeholder="Текст комментария"></textarea>
-            <button type="commit">Опубликовать комментарий</button>
-        </form>
+        {{>comment_form}}
     </div>
 </template>
 
 
 <template name="comment_item">
     <div class="comment">
-        <div class="avatar" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+        <div class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></div>
         <p class="data">
-            <strong class="who">eugene</strong>
-            <span class="he-she">написал</span>
-            <span class="when">сегодня</span>
-            <span class="anchor pseudo">#</span>
+            <strong class="who">{{user}}</strong>
+            <span class="he-she"></span>
+            <span class="when">{{date_ago date}}</span>
+            <a href="#{{_id}}" class="anchor pseudo">#</a>
         </p>
         <div class="text">
             {{text}}
         </div>
     </div>
 </template>
+
+
+<template name="comment_form">
+	<header>
+	    <h3><label for="txtComment">Добавить комментарий</label></h3>
+	</header>
+	<form class="add-comment">
+	    <textarea id="txtComment" class="text-f normal-f" placeholder="Текст комментария"></textarea>
+	    <button>Опубликовать комментарий</button>
+	</form>
+</template>	
