@@ -1,5 +1,16 @@
-gradient() {
-    background: -webkit-linear-gradient(arguments);
+join-stops(stops)
+  str = ''
+  len = length(stops)
+  for stop, i in stops
+    str += ', ' if i
+    str += stop
+  unquote(str)
+
+
+gradient(start, stops...) {
+    stops = join-stops(stops)
+
+    background: -webkit-linear-gradient(start, stops);
     background: -moz-linear-gradient(arguments);
     background: linear-gradient(arguments);
 }
