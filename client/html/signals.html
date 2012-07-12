@@ -5,7 +5,6 @@
 </template>
 
 <template name="signals">
-
     {{# unless signal_selected}}
         {{> signal_filter}}
         <div class="signals" id="item-list">
@@ -21,6 +20,7 @@
         
         <span class="he-she">написал</span>
         <span class="when">{{date_ago date}}</span>
+        <span class='comment-count'>{{comments}}</span>
         <span class="star-ico"></span>
 	</p>
 </template>
@@ -44,7 +44,7 @@
 <template name="signal_item"> 
   <div class="info">  
       <a data-url="{{url}}" href="/signals/{{url}}" class="title">{{title}}</a>
-    {{> user_info}}<span class='comment-count'>{{comments}}</span>
+      {{> user_info}}
   </div>
 </template>
 
