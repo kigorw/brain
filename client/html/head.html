@@ -8,12 +8,13 @@ classes:
       <nav  id="main-menu" class="main-menu">
         <a class="item-signals" role="menu-item" data-page="signals" href="/signals">Сигналы</a>
         <a class="black-btn" role="menu-item" data-page="add"  href="/signals/add">Добавить сигнал</a>
-        {{>  loginButtons}}
+        
       </nav>
 
       <div class="profile">
-        <div class="avatar flft" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
-        <a href="/logout">Выйти</a>
+        {{!<div class="avatar flft" style="background: url(https://si0.twimg.com/profile_images/1992336759/photo-1_normal.jpg) center center"></div>
+        <a href="/logout">Выйти</a>}}
+        {{> loginButtons }}
     	</div>
       <input class="search-f" type="text" placeholder="Search">
       
