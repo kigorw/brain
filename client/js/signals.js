@@ -5,9 +5,33 @@ Template.signals.signals = function () {
 	return Signals.find();
 }
 
+Template.signal_info.favorited = function() {
+    return this.favorites.indexOf(Meteor.user().username)!=-1;
+}
+
+Template.signal_info.events = {
+    "click .star-ico": function(e) {
+        var el = $(e.target);
+
+        var signalEl = el.parents(".info").find("a");
+        var signalId = signalEl.data("id");
+        var user = Meteor.user();
+        var modifier = el.hasClass("active-star-ico")?"$pull": "$push";
+        var obj = {};
+        obj[modifier] = {favorites: user.username};
+        // $push: {supporters: "Traz"}
+        // $pull : { field : _value } }
+
+        Signals.update({_id: signalId}, obj);
+
+    }   
+}
+
+
 Template.signal_item.events = {
 	"click a": function(e) {
 		var url = e.target.dataset.url
+        var id = e.target.dataset.id
 		Router.setSignal(url);
 		Session.set("signal", url)
 		e.preventDefault();
@@ -33,23 +57,5 @@ Template.signal_filter.events = {
         Router.setSignalFilter(type, true);
         e.preventDefault();
     }
-
 }
 
-Template.signal_add.events = {
-    'click button': function(e) {
-        var user = Meteor.user(),
-            signal = {
-            title: $('input[name=title]').val(),
-            url:  $('input[name=url]').val(),
-            users:  $('input[name=users]').val().split(','),
-            email: user.emails,
-            text: $('textarea[name=body]').val(),
-            tags: [],
-            date: (new Date()).getTime(),
-            user: user.username
-        }
-        console.log("insert signal", signal)
-        Signals.insert(signal)
-    }
-}

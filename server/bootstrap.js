@@ -1,3 +1,4 @@
+
 Meteor.startup(function () {
 	if (Signals.find().count() != 0) return;
 
@@ -25,6 +26,8 @@ Meteor.startup(function () {
 			gender: "male"
 		}
 	];
+
+
 
 	var timestamp = (new Date()).getTime();
 	var signals = {

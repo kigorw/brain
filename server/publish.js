@@ -39,6 +39,16 @@ Meteor.publish('comments', function (signalUrl) {
 });
 
 
+
+Meteor.publish('favorites', function () {
+
+  var user = userAllowed(this)
+  if(!user) return [];
+
+  return Favorites.find({user: user.username});
+});
+
+
 Meteor.publish('signals', function (clientFilter) {
   var user = userAllowed(this)
     console.log("client filter", clientFilter)
