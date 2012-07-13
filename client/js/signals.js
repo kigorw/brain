@@ -56,7 +56,3 @@ Template.signal_filter.events = {
         e.preventDefault();
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 5449ef599f7c964035a34da62002b66501e1e7ce
