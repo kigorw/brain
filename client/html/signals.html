@@ -1,6 +1,6 @@
 <template name="signal_filter">
     <div class="filter">
-    <a data-type="*" class="first" href="/signals">Все</a><a data-type="favorites" href="/signals/favorites">Избранные</a><a data-type="my" class="last" href="/signals/my">Только мои</a>
+        <a  data-type="*" href="/signals">Все</a><a class="filter-item-count" data-type="favorites" href="/signals/inbox">Входящие<span>2</span></a><a data-type="favorites" href="/signals/outbox">Исходящие</a><a data-type="my" href="/signals/favorites">Избранные</a>
     </div>
 </template>
 
@@ -16,7 +16,7 @@
 </template>
 <template name="signal_info">
 	<p class="data">
-        <strong class="who">{{user}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+        <strong class="who">{{user}}<i class="avatar"><img src="http://avatars.io/twitter/{{user}}"></i></strong>
         
         <span class="he-she">написал</span>
         <span class="when">{{date_ago date}}</span>
@@ -26,7 +26,7 @@
 </template>
 <template name="user_info_signal">
     <p class="data">
-        <strong class="who">{{user}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+        <strong class="who">{{user}}<i class="avatar"><img src="http://avatars.io/twitter/{{user}}"></i></strong>
         
         <span class="he-she">написал</span>
         <span class="when">{{date_ago date}}</span>

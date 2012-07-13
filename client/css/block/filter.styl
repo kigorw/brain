@@ -2,7 +2,7 @@
 /*Filter*/
 /*-------------------------------------------------*/
 .filter {
-	margin-left: -1px;
+	margin-left: -2px;
 	margin-top:1.375em;
     
     a {
@@ -25,15 +25,29 @@
             gradient(top,  #ffffff 40%,#fafafa 100%);
         }
 
-        &.first {
+        &:first-child {
             border-top-left-radius:15px;
             border-bottom-left-radius:15px;
             padding-left: 16px;
         }
-        &.last {
+        &:last-child {
             border-top-right-radius:15px;
             border-bottom-right-radius:15px;
             padding-right: 16px;
         }
+    }
+    .filter-item-count{
+        padding-right: 12px;
+    }
+    .filter-item-count span{
+        background-color: #888;
+        font-size: 0.75em;
+        vertical-align: 1px;
+        padding: 0.15em 0.5em;
+        border-radius: 1em;
+        text-shadow: none;
+        color: #eee;
+        margin-left: 0.5em;
+        box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5);
     }
 }
