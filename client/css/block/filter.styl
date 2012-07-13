@@ -1,8 +1,21 @@
 @import "../util/vendor"
-/*Filter*/
-/*-------------------------------------------------*/
+
+submenu_active() {
+    pointer-events: none;
+    box-shadow: 0 1px 0 #fff, inset 0 1px 3px #888;
+    background: #ddd; 
+    gradient(top,  #ddd 40%,#ffffff 100%);
+}
+
+remove_default() {
+    pointer-events: inherit;
+    box-shadow: inherit;
+    background: inherit; 
+    gradient(top,  #ffffff 40%,#f0f0f0 100%);
+}
+
 .filter {
-	margin-left: -1px;
+	margin-left: -2px;
 	margin-top:1.375em;
     
     a {
@@ -16,24 +29,61 @@
         gradient(top,  #ffffff 40%,#f0f0f0 100%);
         
         &.active {
-            pointer-events: none;
-            box-shadow: 0 1px 0 #fff, inset 0 1px 3px #888;
-            background: #ddd; 
-            gradient(top,  #ddd 40%,#ffffff 100%);
+           submenu_active() 
         }
         &:hover {
             gradient(top,  #ffffff 40%,#fafafa 100%);
         }
 
-        &.first {
+        &:first-child {
             border-top-left-radius:15px;
             border-bottom-left-radius:15px;
             padding-left: 16px;
         }
-        &.last {
+        &:last-child {
             border-top-right-radius:15px;
             border-bottom-right-radius:15px;
             padding-right: 16px;
         }
     }
+    .filter-item-count{
+        padding-right: 12px;
+    }
+    .filter-item-count span{
+        background-color: #888;
+        font-size: 0.75em;
+        vertical-align: 1px;
+        padding: 0.15em 0.5em;
+        border-radius: 1em;
+        text-shadow: none;
+        color: #eee;
+        margin-left: 0.5em;
+        box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5);
+    }
 }
+
+
+
+.p-signals .v-signals [data-type="*"] {
+    submenu_active();
+}
+.p-sent .v-signals [data-type="*"],
+.p-inbox .v-signals [data-type="*"],
+.p-favorites .v-signals [data-type="*"] {
+    remove_default()
+}
+
+
+
+
+.p-sent .v-signals [data-type=sent] {
+    submenu_active();
+    
+}
+.p-inbox .v-signals [data-type=inbox] {
+    submenu_active();
+}
+.p-favorites .v-signals [data-type=favorites] {
+    submenu_active();
+}
+

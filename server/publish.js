@@ -39,13 +39,17 @@ Meteor.publish('comments', function (signalUrl) {
 });
 
 
+
+
+
 Meteor.publish('signals', function (clientFilter) {
   var user = userAllowed(this)
     console.log("client filter", clientFilter)
   if(!user) return [];
   var filter = {};
   if(clientFilter) {
-    if(clientFilter.type == "my") filter = {user: user.username}
+    if(clientFilter.type == "sent") filter = {user: user.username}
+    if(clientFilter.type == "inbox") filter = {users: user.username}
     if(clientFilter.type == "favorites") filter = {favorites: user.username}
   }
   console.log(filter)

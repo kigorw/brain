@@ -20,4 +20,8 @@ Meteor.autosubscribe(function () {
 
 	});
 
+
+
 });
+
+Meteor.subscribe('favorites');
