@@ -2,44 +2,55 @@
 /*Article*/
 /*-------------------------------------------------*/
 .signal-text{
-
+    li {
+        padding-bottom: 1em;
+        list-style: none;
+        &::before{
+            content: "—";
+            margin: 0 0.25em 0 -1em;
+        }
+    }
+    p {
+        padding-bottom: 1em;
+    }
+    img {
+        margin:0.5em 0 2em 0.12em;
+        max-width: 640px;
+        height: auto;
+    }
+    .data, .whom .data {
+        padding-bottom: 0;
+    }
+    .typo {
+        padding-top: 1em;
+    }
+    .signal-data {
+        margin-bottom: 0.325em;
+    }
 }
-.whom{
+.whom {
 	width: 100%;
 	border-radius: 3px;
 	padding: 0.5em;
 	margin-top: 1em;
 	margin-left: -0.5em;
 	overflow: hidden;
-}
-.whom label{
-	color: #b2b2b2;
-	float:left; 
-	margin-right: 0.4em;
-	font-size: 0.875em;
-	cursor: default;
-	line-height: 2em;
-	font-size: 0.813em;
-}
-.signal-text .data, .whom .data{
-	padding-bottom: 0;
-}
-.whom .data{
-	float: left;
-	margin-right: 0.4em;
-	line-height: 1.625em
-}
-.whom .data .who .avatar{
-	margin-top: 4px;
-}
-.signal-text .typo{
-	padding-top: 1em;
-}
-.signal-text .signal-data{
-	margin-bottom: 0.325em;
-}
-.signal-text img{
-	margin:0.5em 0 2em 0.12em;
-	max-width: 640px;
-	height: auto;
+    label {
+        color: #b2b2b2;
+        float:left; 
+        margin-right: 0.4em;
+        font-size: 0.875em;
+        cursor: default;
+        line-height: 2em;
+        font-size: 0.813em;
+    }
+    .data {
+        float: left;
+        margin-right: 0.4em;
+        line-height: 1.625em
+
+        .who .avatar {
+            margin-top: 4px;
+        }
+    }
 }
