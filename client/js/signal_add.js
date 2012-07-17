@@ -1,6 +1,5 @@
 Template.signal_add.users = function() {
-    console.log(Meteor.users.find())
-    return Meteor.users.find().fetch()
+    return Meteor.users.find({'username': {$ne:  Meteor.user().username}}).fetch()
 }
 
 Template.signal_add.on_load = function() {
