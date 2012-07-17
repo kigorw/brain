@@ -77,7 +77,7 @@ BrainRouter = Backbone.Router.extend({
     pageClass: function(page) {
         var wrap = $("body > .wrapper");
         var prevPage = wrap.data("page");
-
+        Session.set("page", page)
         wrap.removeClass("p-"+prevPage)
             .addClass("p-"+page)
             .data("page", page);

@@ -1,4 +1,5 @@
 Template.signal_add.users = function() {
+    if(!Meteor.user()) return [];
     return Meteor.users.find({'username': {$ne:  Meteor.user().username}}).fetch()
 }
 
