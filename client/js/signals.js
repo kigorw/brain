@@ -6,7 +6,7 @@ Template.signals.signals = function () {
 }
 
 Template.signal_info.favorited = function() {
-    return this.favorites.indexOf(Meteor.user().username)!=-1;
+    return this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1;
 }
 
 Template.signal_info.events = {
