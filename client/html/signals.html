@@ -1,6 +1,6 @@
 <template name="signal_filter">
     <div class="filter">
-        <a  data-type="*" href="/signals">Все</a><a class="filter-item-count" data-type="inbox" href="/signals/inbox">Входящие<span>2</span></a><a data-type="sent" href="/signals/outbox">Исходящие</a><a data-type="favorites" href="/signals/favorites">Избранные</a>
+        <a  data-type="*" href="/signals">Все</a><a class="filter-item-count" data-type="inbox" href="/signals/inbox">Входящие{{#if inbox_count}}<span>{{inbox_count}}</span>{{/if}}</a><a data-type="sent" href="/signals/outbox">Исходящие</a><a data-type="favorites" href="/signals/favorites">Избранные</a>
     </div>
 </template>
 
@@ -42,7 +42,7 @@
 </template>
 
 <template name="signal_item"> 
-  <div class="info">  
+  <div class="info {{#if read}}read{{/if}}">  
       <a data-url="{{url}}" data-id="{{_id}}" href="/signals/{{url}}" class="title">{{title}}</a>
       {{> signal_info}}
   </div>

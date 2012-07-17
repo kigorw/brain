@@ -62,6 +62,7 @@ Meteor.startup(function () {
 				title: "Роль JavaScript в Асане",
 				url: "asana-js",
 				users: ["kigorw", "maycry"],
+				read: ["kigorw"],
 				favorites: ["maycry"],
 				email: "e.chechurin@gmail.com",
 				text: "В Асане особо важную роль играет понимание процессов взаимодействия между фреймворком и байдой. Там юзают самые совершенные технологии",

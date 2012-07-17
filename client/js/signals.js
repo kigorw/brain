@@ -9,6 +9,13 @@ Template.signal_info.favorited = function() {
     return this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1;
 }
 
+Template.signal_item.read = function() {
+    var username = Meteor.user().username;
+    if(this.user==username) return true;
+
+    return this.read && this.read.indexOf(username)!=-1;
+}
+
 Template.signal_info.events = {
     "click .star-ico": function(e) {
         var el = $(e.target);
@@ -21,10 +28,33 @@ Template.signal_info.events = {
         obj[modifier] = {favorites: user.username};
         // $push: {supporters: "Traz"}
         // $pull : { field : _value } }
-
         Signals.update({_id: signalId}, obj);
 
     }   
+}
+
+Meteor.autosubscribe(function () {
+
+    var signalUrl = Session.get("signal");
+
+    if(!signalUrl) return;
+    var user = Meteor.user();
+    var signal = Signals.findOne({url: signalUrl});
+    if(!signal) return;
+
+    var username = user.username;
+    var isRead = signal.read && signal.read.indexOf(username)!=-1;
+    if(isRead) return;
+
+    Signals.update({_id: signal._id}, {$push: {read: username} });
+
+});
+
+Template.signal_filter.inbox_count = function() {
+    var user = Meteor.user();
+    var obj = SignalCounts.findOne();
+    if(!obj) return;
+    return obj.count;//Signals.find({read: {$ne:  user.username}, user: {$ne: user.username} }).count();
 }
 
 

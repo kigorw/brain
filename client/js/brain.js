@@ -9,7 +9,7 @@ Meteor.autosubscribe(function () {
 
 
 	Meteor.subscribe('comments', Session.get("signal") , function () {
-
+		
 	});
 
 	Meteor.subscribe('users', function () {
@@ -19,7 +19,9 @@ Meteor.autosubscribe(function () {
 	Meteor.subscribe('tags', function () {
 
 	});
-
+	Meteor.subscribe('signal-counts', function() {
+		
+	});
 
 
 });

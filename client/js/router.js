@@ -1,3 +1,6 @@
+
+
+
 BrainRouter = Backbone.Router.extend({
     routes: {
         "": "index",
@@ -19,11 +22,16 @@ BrainRouter = Backbone.Router.extend({
     favorites: function() {
         this.setSignalFilter("favorites")
     },
+    clearInnerNav: function() {
+        var wrap = $("body > .wrapper");
+        wrap.removeClass("p-sent p-inbox p-favorites");
+    },
 
     setSignalFilter: function(type, navigate) {
         this.pageClass("signals");
+        Session.set("signal", null);
         var wrap = $("body > .wrapper");
-        wrap.removeClass("p-sent p-inbox p-favorites");
+        this.clearInnerNav();
         if(type!="*") wrap.addClass("p-"+type)
 
         
@@ -44,11 +52,13 @@ BrainRouter = Backbone.Router.extend({
     },
 
     signal: function (url) {
+
         this.pageClass("signal");
         Session.set("signal", url);
     },
     index: function() {
         this.pageClass("signals");
+        this.clearInnerNav();
         Session.set("signal", null);
         Session.set("signal_filter", null);
     },

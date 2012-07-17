@@ -39,7 +39,33 @@ Meteor.publish('comments', function (signalUrl) {
 });
 
 
+Meteor.publish("signal-counts", function() {
+  var user = userAllowed(this)
 
+  if(!user) return [];
+  var me = this;
+  var uuid = Meteor.uuid();
+  var findCursor = Signals.find({read: {$ne:  user.username}, user: {$ne: user.username} });
+  var sendCount = function() {
+    var count = findCursor.count();
+    me.set("counts", uuid, {count: count});
+    me.flush();
+  }
+
+  findCursor.observe({
+    added: sendCount,
+    removed: sendCount
+  });
+
+  this.onStop(function () {
+    findCursor.stop();
+    me.unset("counts", uuid, ["count"]);
+    me.flush();
+  });
+
+
+
+})
 
 
 Meteor.publish('signals', function (clientFilter) {
@@ -59,6 +85,8 @@ Meteor.publish('signals', function (clientFilter) {
   	title:1, 
   	url: 1, 
   	date: 1, 
+    read: 1,
+    favorites:1,
   	sort: {date: -1}
   });
   //только те которые имеет право видеть
