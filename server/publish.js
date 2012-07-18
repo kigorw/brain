@@ -4,6 +4,8 @@ var AllowedEmails = [
   "byorickq@yandex.ru"
 ]
 
+
+
 function userAllowed(request, userId) {
 	var user = Meteor.users.findOne({_id: userId || request.userId()})
 	
@@ -77,6 +79,7 @@ Meteor.publish('signals', function (clientFilter) {
     if(clientFilter.type == "sent") filter = {user: user.username}
     if(clientFilter.type == "inbox") filter = {users: user.username}
     if(clientFilter.type == "favorites") filter = {favorites: user.username}
+    //if(clientFilter.type == "search") filter = {
   }
   console.log(filter)
 

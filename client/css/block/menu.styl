@@ -105,14 +105,15 @@ current() {
     outline: none;
     font-size:0.875em;
     -webkit-transition: background-color 0.5s ease, width 0.5s ease;
-
-    &:focus {
+    &:focus,
+    &.focused {
         background-color: #eee;
         width: 25%;
         color: #555;
         border-color: #333;
     }
 }
+
 
 .p-signals .v-signals {display: block;}
 .p-add .v-add {display: block;}
