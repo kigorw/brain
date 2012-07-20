@@ -3,11 +3,11 @@ Template.head.events = {
         var el = $(e.target);
         
         Router.setPage("search?q="+el.val(), "search");
-
+        Session.set("signal_filter", {search: el.val()}); 
         Session.set("signal", null)   
         e.preventDefault();
     },
-    
+
     "blur input": function(e) {
     	var el = $(e.target);
     	if(el.val().trim()!="") el.addClass("focused"); 

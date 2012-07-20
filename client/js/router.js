@@ -52,7 +52,6 @@ BrainRouter = Backbone.Router.extend({
     },
 
     signal: function (url) {
-
         this.pageClass("signal");
         Session.set("signal", url);
     },
