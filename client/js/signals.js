@@ -6,6 +6,7 @@ Template.signals.signals = function () {
 }
 
 Template.signal_info.favorited = function() {
+    console.log(this.favorites, this.title, this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1, Meteor.user());
     return this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1;
 }
 
