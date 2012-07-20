@@ -6,21 +6,27 @@
 
 <template name="signals">
     {{# unless signal_selected}}
-        {{> signal_filter}}
+        {{# unless search}} {{> signal_filter}} {{/unless}}
         <div class="signals" id="item-list">
             {{#each signals}}
                 {{> signal_item}}
             {{/each}}
+            {{#if not_found }} 
+                    <div class="search-null">
+                      &laquo;<span>{{search}}</span>&raquo; не нашлось
+                    </div>
+            {{/if}} 
         </div>
     {{/unless}}
+
 </template>
 <template name="signal_info">
 	<p class="data">
         <strong class="who">{{user}}<i class="avatar"><img src="http://avatars.io/twitter/{{user}}"></i></strong>
         
-        <span class="he-she">написал</span>
-        <span class="when">{{date_ago date}}</span>
-        <span class='comment-count'>{{comments}}</span>
+
+        <span class="when">&nbsp;{{date_ago date}}</span>
+        {{#if comments }}<span class='comment-count'>{{comments}}</span>{{/if}}
         <span class="star-ico {{#if favorited}}active-star-ico{{/if}}"></span>
 	</p>
 </template>

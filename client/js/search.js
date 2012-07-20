@@ -1,13 +1,11 @@
 Template.head.events = {
     "keyup input": function(e) {
         var el = $(e.target);
-        
-        Router.setPage("search?q="+el.val(), "search");
-
-        Session.set("signal", null)   
+        var val = el.val().trim();
+        Router.setSearch(val, true);
         e.preventDefault();
     },
-    
+
     "blur input": function(e) {
     	var el = $(e.target);
     	if(el.val().trim()!="") el.addClass("focused"); 
