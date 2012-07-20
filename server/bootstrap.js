@@ -20,7 +20,7 @@ Meteor.startup(function () {
 		},
 		{
 			username: "maycry",
-			emails: "byorickq@gmail.com",
+			emails: "byorickq@yandex.ru",
 			pass: "password",
 			name: "Yuri Tansky",
 			gender: "male"

@@ -4,12 +4,19 @@
 BrainRouter = Backbone.Router.extend({
     routes: {
         "": "index",
+        "login": "login",
+        "login/": "login",
         "signals/" : "index",
         "signals/sent": "sent",
         "signals/inbox": "inbox",
         "signals/favorites": "favorites",
-        "signals/add": "add",
         "signals/:url": "signal",
+        "signals/add": "add"
+    },
+
+    login: function() {
+        this.pageClass("login"); 
+
     },
 
     sent: function() {
