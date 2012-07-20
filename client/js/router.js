@@ -6,12 +6,14 @@ BrainRouter = Backbone.Router.extend({
         "": "index",
         "login": "login",
         "login/": "login",
+        "search/:query": "search",
         "signals/" : "index",
         "signals/sent": "sent",
         "signals/inbox": "inbox",
         "signals/favorites": "favorites",
-        "signals/:url": "signal",
-        "signals/add": "add"
+        "signals/add": "add",
+        "signals/:url": "signal"
+        
     },
 
     login: function() {
@@ -25,7 +27,14 @@ BrainRouter = Backbone.Router.extend({
     inbox: function() {
         this.setSignalFilter("inbox")
     },
-
+    search: function(query) {
+        var val = decodeURI(query);
+        this.setSearch(val);
+        if(val) {
+            $("#txtSearch").val(val).addClass("focused");  
+        }
+        
+    },
     favorites: function() {
         this.setSignalFilter("favorites")
     },
@@ -33,13 +42,26 @@ BrainRouter = Backbone.Router.extend({
         var wrap = $("body > .wrapper");
         wrap.removeClass("p-sent p-inbox p-favorites");
     },
+    setSearch: function(val, navigate) {
+        if(!val) {
+            Router.setPage("signals", "signals");
+            this.removeClass("search");
+            return Router.index()
+        }
+
+        Router.removeClass("signals")
+        if(navigate) Router.setPage("search/"+val, "search");
+        Router.addClass("search")
+        Session.set("signal_filter", {search: val}); 
+        Session.set("signal", null)   
+    },
 
     setSignalFilter: function(type, navigate) {
         this.pageClass("signals");
         Session.set("signal", null);
-        var wrap = $("body > .wrapper");
+
         this.clearInnerNav();
-        if(type!="*") wrap.addClass("p-"+type)
+        if(type!="*") this.addClass(type);
 
         
 
@@ -79,6 +101,12 @@ BrainRouter = Backbone.Router.extend({
     setPage: function(url, page) {
         this.pageClass(page);    
         this.navigate(url);
+    },
+    addClass: function(page) {
+        $("body > .wrapper").addClass("p-"+page);
+    },
+    removeClass: function(page) {
+        $("body > .wrapper").removeClass("p-"+page);
     },
     pageClass: function(page) {
         var wrap = $("body > .wrapper");

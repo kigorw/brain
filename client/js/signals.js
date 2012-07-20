@@ -5,6 +5,25 @@ Template.signals.signals = function () {
 	return Signals.find();
 }
 
+Template.signals.search = function () {
+    var filter = Session.get("signal_filter");
+    if(filter && filter.search) {
+        return filter.search;
+    } 
+    return false;
+}
+
+
+Template.signals.not_found = function () {
+    var search = Template.signals.search();
+    var count = Signals.find().count();
+    return count==0 && search;
+}
+
+
+
+
+
 Template.signal_info.favorited = function() {
     console.log(this.favorites, this.title, this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1, Meteor.user());
     return this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1;

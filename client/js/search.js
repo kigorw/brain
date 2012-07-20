@@ -1,10 +1,8 @@
 Template.head.events = {
     "keyup input": function(e) {
         var el = $(e.target);
-        
-        Router.setPage("search?q="+el.val(), "search");
-        Session.set("signal_filter", {search: el.val()}); 
-        Session.set("signal", null)   
+        var val = el.val().trim();
+        Router.setSearch(val, true);
         e.preventDefault();
     },
 
