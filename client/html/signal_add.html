@@ -1,21 +1,23 @@
 <template name="signal_add">
     <article class="signal-add">
-        <input class="title-f" name="title" placeholder="Заголовок">
-        <input class="url-f" name="url" placeholder="url">
-        <textarea class="text-f" name="body" placeholder="Текст"></textarea>
-            
-        <select id="recipients" class="whom-f" data-placeholder="Мозги" multiple>
-            {{#each users}}
-            <option value="{{this.username}}">{{this.name}}</option> 
+        <form method="post" action="/" name="signal-add">
+            <input class="title-f" name="title" placeholder="Заголовок" required autofocus>
+            <input class="url-f" name="url" placeholder="url" required>
+            <textarea class="text-f" name="body" placeholder="Текст" required></textarea>
+                
+            <select id="recipients" class="whom-f" data-placeholder="Мозги" multiple required>
+                {{#each users}}
+                <option value="{{this.username}}">{{this.name}}</option> 
 
-            {{/each }}
-        </select>
-        <p class="private-f">
-            <input id="private" type="checkbox">
-            <label for="private">Приватный</label>
-        </p>
+                {{/each }}
+            </select>
+            <p class="private-f">
+                <input id="private" type="checkbox">
+                <label for="private">Приватный</label>
+            </p>
 
-        <button>Опубликовать сигнал</button>
+            <button>Опубликовать сигнал</button>
+        </form>
     </article>
     {{on_load}}
 </template>
