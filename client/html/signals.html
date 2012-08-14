@@ -34,11 +34,15 @@
     <p class="data">
         <strong class="who">{{user}}<i class="avatar"><img src="http://avatars.io/twitter/{{user}}"></i></strong>
         
-        <span class="he-she">написал</span>
+        <span class="he-she">,</span>
         <span class="when">{{date_ago date}}</span>
         <span class="for">для</span>
-        <strong class="who read">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
-        <strong class="who">kigorw<i class="avatar" style="background: url(http://avatars.io/twitter/{{user}}) center center"></i></strong>
+
+
+        {{#each users}}
+            <strong class="who read">{{this}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{this}}) center center"></i></strong>
+        {{/each}}
+
     </p>
 </template>
 
