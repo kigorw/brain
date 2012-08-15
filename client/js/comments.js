@@ -33,6 +33,6 @@ Template.comment_form.events = {
 Template.comments.events = {
     "click .btn-remove": function(e) {
         var id = e.target.dataset.id;
-        Comments.update({_id:id}, {removed: true});
+        Comments.update({_id:id}, { $set:{removed: true} });
     }
 }
