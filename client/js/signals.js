@@ -21,7 +21,12 @@ Template.signals.not_found = function () {
 }
 
 
-
+Template.signals.events = {
+    "click .btn-remove": function(e) {
+        var id = e.target.dataset.id;
+        Signals.update({_id:id}, { $set:{removed: true} });
+    }
+}
 
 
 Template.signal_info.favorited = function() {
@@ -39,7 +44,6 @@ Template.signal_item.read = function() {
 Template.signal_info.events = {
     "click .star-ico": function(e) {
         var el = $(e.target);
-
         var signalEl = el.parents(".info").find("a");
         var signalId = signalEl.data("id");
         var user = Meteor.user();
@@ -52,6 +56,8 @@ Template.signal_info.events = {
 
     }   
 }
+
+
 
 Meteor.autosubscribe(function () {
 

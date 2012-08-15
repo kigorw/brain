@@ -34,7 +34,7 @@ Meteor.publish('comments', function (signalUrl) {
   if(!user) return [];
 
   var signal = Signals.findOne({url: signalUrl});
-  return Comments.find({signal: signal._id}, {
+  return Comments.find({signal: signal._id, removed: null}, {
     sort: {date: 1}
   });
 
@@ -47,7 +47,7 @@ Meteor.publish("signal-counts", function() {
   if(!user) return [];
   var me = this;
   var uuid = Meteor.uuid();
-  var findCursor = Signals.find({read: {$ne:  user.username}, user: {$ne: user.username} });
+  var findCursor = Signals.find({read: {$ne:  user.username}, user: {$ne: user.username}, removed: null });
   var sendCount = function() {
     var count = findCursor.count();
     me.set("counts", uuid, {count: count});
@@ -74,13 +74,14 @@ Meteor.publish('signals', function (clientFilter) {
   var user = userAllowed(this)
     console.log("client filter", clientFilter)
   if(!user) return [];
-  var filter = {};
+  var filter = {removed:null};
   if(clientFilter) {
     if(clientFilter.type == "sent") filter = {user: user.username}
     if(clientFilter.type == "inbox") filter = {users: user.username}
     if(clientFilter.type == "favorites") filter = {favorites: user.username}
     if(clientFilter.search) filter = {_keywords: { $in: clientFilter.search.split(" ") } };
   }
+
   console.log(filter)
 
   var result = Signals.find(filter, {

@@ -1,0 +1,63 @@
+link_color = rgb(24,118,172);
+hover_color = red;
+visited_color = #1876ac;
+
+a(c = link_color, h = hover_color, v = false)
+  color:c;  
+  if v
+    &:visited
+      color:v;
+  else
+    &:visited
+      color:c;
+    
+  &:hover
+    color:h
+
+a_red()
+  a red #000
+
+
+a_bl(c = 0)
+  a rgb(c,c,c)
+ 
+a_blue2()
+  a rgb(102,173,233)
+  
+a_white()
+  a #fff red
+  
+a_dashed(c = link_color, h = hover_color)
+   color:c;
+   text-decoration:none; 
+   cursor:pointer;
+   border-bottom:1px dashed c;
+   &:hover
+    color:h;
+    border-bottom-color:h;
+    cursor:pointer; 
+
+a_dotted(c = link_color, h = hover_color)
+   color:c;
+   text-decoration:none; 
+   cursor:pointer;
+   border-bottom:1px dotted c;
+   &:hover
+    color:h;
+    border-bottom-color:h;
+    cursor:pointer;
+    
+a_red_dashed()
+    a_dashed red black
+    
+a_green_dotted()
+    a_dotted rgb(0,142,0) black
+
+a_red_dotted()
+    a_dotted red black  
+
+a_bl_dashed()
+    a_dashed black red
+    
+a_bl_dotted()
+    a_dotted black red

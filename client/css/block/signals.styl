@@ -1,5 +1,5 @@
 @import "../util/vendor";
-
+@import "../util/links";
 
 .signals {
 	margin-top: 1.5em
@@ -43,6 +43,22 @@
     font-size: 0.875em;
     cursor: pointer;
 }
+
+.btn-remove {
+    display:none;
+    cursor:pointer;
+    margin-left:10px;
+    color:red;
+    font-size:12px;
+    &:hover {color:black;}
+}
+
+.signal_item:hover {
+    .btn-remove {
+        display:inline-block;
+    }
+}
+
 .star-ico:hover{
     color: #777;
 }

@@ -53,9 +53,9 @@
 </template>
 
 <template name="signal_item"> 
-  <div class="info {{#if read}}read{{/if}}">  
+  <div class="signal_item info {{#if read}}read{{/if}}">  
       <a data-url="{{url}}" data-id="{{_id}}" href="/signals/{{url}}" class="title">{{title}}</a>
-      {{> signal_info}}
+      {{> signal_info}}<span data-id="{{_id}}" title="удалить" class="btn-remove">✕</span>
   </div>
 </template>
 
