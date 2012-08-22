@@ -1,5 +1,7 @@
 
-
+function caption(val) {
+    document.title = val;
+}
 
 BrainRouter = Backbone.Router.extend({
     routes: {
@@ -89,6 +91,7 @@ BrainRouter = Backbone.Router.extend({
         this.clearInnerNav();
         Session.set("signal", null);
         Session.set("signal_filter", null);
+
     },
     add: function() {
         this.pageClass("add");

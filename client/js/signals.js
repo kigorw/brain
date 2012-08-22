@@ -71,7 +71,7 @@ Meteor.autosubscribe(function () {
     var username = user.username;
     var isRead = signal.read && signal.read.indexOf(username)!=-1;
     if(isRead) return;
-
+    caption(signal.title);
     Signals.update({_id: signal._id}, {$push: {read: username} });
 
 });

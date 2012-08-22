@@ -24,50 +24,25 @@ if(Meteor.is_server) {
 	  return _.difference(keys, except);
 	}
 
-	function onAddedSignal(signal) {
-	  if(signal.onAdd) return;//how to run onSave method once?
-	  signal.onAdd = true;
-
-	  var keys = getKeywords(signal);
-	  signal._keywords = keys;
-	  signal.text = typo(signal.text.trim());
-
-	  Signals.update({_id: signal._id}, signal)
-	  console.log("added", signal);
-
-	}
-
-	function onChangedSignal(signal) {
-	  var keys = getKeywords(signal);
-	  if(signal._keywords.join(" ")==keys.join(" ") ) return;
-	  signal._keywords = keys;
-	  signal.text = typo(signal.text.trim());
-	  console.log("changed", signal);
-	  Signals.update({_id: signal._id}, signal)
-	}
-	
-	function onAddedComment(comment) {
-		if(comment.onAdd) return;
-		comment.onAdd = true;
-		onChangedComment(comment);
-	}
-
-	function onChangedComment(comment) {
-	 console.log("changed comments")
-	  comment.text = typo(comment.text.trim());
-	  Comments.update({_id: comment._id}, comment)
-	}
 
 
-	var signalHandle = Signals.find().observe({
-	  added: onAddedSignal,
-	  changed: onChangedSignal
-	});
+	Meteor.methods({
+		addSignal: function(signal) {
+			var keys = getKeywords(signal);
+			if((signal._keywords && signal._keywords.join(" "))==keys.join(" ") ) return;
+			signal._keywords = keys;
+			signal.text = typo(signal.text.trim());
+			signal.title = typo(signal.title.trim()).replace(/(<([^>]+)>)/ig,"");
+			Signals.insert(signal)
 
-	var commentsHandle = Comments.find().observe({
-	  added: onAddedComment,
-	  changed: onChangedComment
-	});
+		},
+		addComment: function(comment, signal) {
+			comment.text = typo(comment.text.trim());
+			Comments.insert(comment);
+			Signals.update({_id: signal._id}, { $inc : { comments : 1 } })
+
+		}
+	})
 
 
 }

@@ -16,8 +16,7 @@ function sendForm(e) {
         signal: signal._id 
     }
 
-    Comments.insert(comment);
-    Signals.update({_id: signal._id}, { $inc : { comments : 1 } })
+    Meteor.call("addComment", comment, signal);
     $("textarea").val("");
 }
 
