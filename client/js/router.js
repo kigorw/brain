@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-
 function caption(val) {
     document.title = val;
 }
 
-=======
->>>>>>> login page
 BrainRouter = Backbone.Router.extend({
     routes: {
         "": "index",
