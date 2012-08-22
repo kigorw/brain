@@ -23,8 +23,6 @@
 <template name="signal_info">
 	<p class="data">
         <strong class="who">{{user}}<i class="avatar"><img src="http://avatars.io/twitter/{{user}}"></i></strong>
-        
-
         <span class="when">&nbsp;{{date_ago date}}</span>
         {{#if comments }}<span class='comment-count'>{{comments}}</span>{{/if}}
         <span class="star-ico {{#if favorited}}active-star-ico{{/if}}"></span>

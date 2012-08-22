@@ -1,4 +1,3 @@
-
 function caption(val) {
     document.title = val;
 }
@@ -15,7 +14,6 @@ BrainRouter = Backbone.Router.extend({
         "signals/favorites": "favorites",
         "signals/add": "add",
         "signals/:url": "signal"
-        
     },
 
     login: function() {

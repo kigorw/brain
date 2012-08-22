@@ -1,6 +1,5 @@
 @import "../util/vendor"
-/*Wrappers*/
-/*-------------------------------------------------*/
+
 .wrapper{
 	width: 100%;
 }
@@ -32,8 +31,21 @@
 	.separator-shadow {
 		margin-left: -20px;
 	}
-	.search-f{
+	.search-f, .login-header{
 		display: none;
+	}
+	.filter {
+		margin-left: -2px;
+		margin-top:1.375em;	    
+	    a {
+	        padding: 5px 5px 5px;
+	        &:first-child {
+	            padding-left: 10px;
+	        }
+	        &:last-child {
+	            padding-right: 10px;
+	        }
+	    }
 	}
 }
 @media screen and (max-width: 680px){
@@ -41,8 +53,6 @@
 		max-width: 100%;
 	}
 }
-
-
 .page-view {
 	display:none;
 }

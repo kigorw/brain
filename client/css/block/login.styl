@@ -1,3 +1,83 @@
-.login_page{
+.login-page {
 	background-color: #4A4A4A;
+	overflow: hidden;
+}
+.login-page .logo {
+	position: absolute;
+	z-index: 1;
+	width: 236px;
+	height: 108px;
+	background: url(/images/logo.png) no-repeat;
+	margin-left: -118px;
+	left: 50%;
+}
+.login-page .mozg-pic{
+	width: 405px;
+	height: 348px;
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	margin-left: -202px;
+	background: url(/images/mozg_opacity.png) no-repeat;
+	top: 264px;
+}
+.login-container {
+	padding: 30px 20px;
+	text-align: center;
+	max-width: 460px;
+	width: 70%;
+	margin: 73px auto 250px;
+	border-radius: 5px;
+	background-color: #222;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 5px 20px rgba(0, 0, 0, 0.2);
+	background: #393939 url(/images/mozg_opacity.png) center 105% no-repeat;
+	p {
+		color: #afafaf;
+		font-size: 1.125em;
+		line-height: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	.small-text {
+		color: #afafaf;
+		font-size: 0.813em;
+		line-height: 1.7em;
+		margin-bottom: 5em;
+		padding: 0 40px;
+		a{
+			color: #aaa;
+			border-color: #666;
+		}
+		a:hover{
+			color: #ccc;
+			border-color: #999;
+		}
+	}
+	.black-btn{
+		padding: 9px 20px 9px 40px;
+		position: relative;
+		border: 2px solid #148b9e;
+		box-shadow: inset 0px 15px 0 rgba(255,255,255,0.07),0 0 10px #148b9e;
+	}
+	.black-btn:hover{
+		color: #eee;
+		padding: 9px 20px 9px 40px;
+		position: relative;
+		border: 2px solid #148b9e;
+		box-shadow: inset 0px 15px 0 rgba(255,255,255,0.07),0 0 20px #148b9e;
+	}
+	.black-btn:active{
+		color: #999;
+		box-shadow: inset 0px 0px 3px rgba(0,0,0,0.5),0 0 10px #148b9e;
+	}
+	.black-btn:before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		background: url(/images/facebook-icon.png) no-repeat;
+		top: 7px;
+		left: 19px;
+		padding: 10px 20px 10px 40px;
+	}
 }
