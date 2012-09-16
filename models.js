@@ -27,13 +27,21 @@ if(Meteor.is_server) {
 
 
 	Meteor.methods({
-		addSignal: function(signal) {
+		saveSignal: function(signal) {
 			var keys = getKeywords(signal);
 			if((signal._keywords && signal._keywords.join(" "))==keys.join(" ") ) return;
 			signal._keywords = keys;
-			signal.text = typo(signal.text.trim());
+			signal.typo_text = typo(signal.text.trim());
 			signal.title = typo(signal.title.trim()).replace(/(<([^>]+)>)/ig,"");
-			Signals.insert(signal)
+
+			if(!signal._id) { 
+				Signals.insert(signal) 
+			} else {
+				var q = {_id: signal._id}
+				var s = Signals.findOne(q)
+				_.extend(s, signal)
+				Signals.update(q, s)
+			}
 
 		},
 		addComment: function(comment, signal) {

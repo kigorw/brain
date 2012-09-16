@@ -25,6 +25,11 @@ Template.signals.events = {
     "click .btn-remove": function(e) {
         var id = e.target.dataset.id;
         Signals.update({_id:id}, { $set:{removed: true} });
+    },
+    "click .btn-edit": function(e) {
+        var url = e.target.dataset.url;
+        Router.edit(url, true);
+
     }
 }
 
@@ -94,7 +99,8 @@ Template.signal_item.events = {
 	}
 }
 
-Template.signals.signal_selected = Template.signal.signal_selected = function () {
+Template.signals.signal_selected = 
+Template.signal.signal_selected = function () {
     return !Session.equals('signal', null);
 }
 

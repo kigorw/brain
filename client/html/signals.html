@@ -40,7 +40,7 @@
         {{#each users}}
             <strong class="who read">{{this}}<i class="avatar" style="background: url(http://avatars.io/twitter/{{this}}) center center"></i></strong>
         {{/each}}
-
+        <a data-url="{{url}}" title="" href="/signals/edit/{{url}}" class="btn-edit">✎</a>
     </p>
 </template>
 
@@ -53,7 +53,7 @@
 <template name="signal_item"> 
   <div class="signal_item info {{#if read}}read{{/if}}">  
       <a data-url="{{url}}" data-id="{{_id}}" href="/signals/{{url}}" class="title">{{title}}</a>
-      {{> signal_info}}<span data-id="{{_id}}" title="удалить" class="btn-remove">✕</span>
+      {{> signal_info}}<a data-url="{{url}}" title="" href="/signals/edit/{{url}}" class="btn-edit">✎</a><span data-id="{{_id}}" title="удалить" class="btn-remove">✕</span>
   </div>
 </template>
 
@@ -66,7 +66,7 @@
         <h1>{{title}}</h1>
             {{> user_info_signal }}
         <div class='typo'>
-            {{html text}}
+            {{html typo_text}}
         </div>
           {{/if}}
         {{/with}}

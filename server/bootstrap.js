@@ -54,6 +54,17 @@ Meteor.startup(function () {
 				tags: ["Reading"],
 				date: timestamp+1000,
 				comments:0
+			},
+			{
+				title: "Дайджест 1",
+				url: "some-digest",
+				users: ["maycry", "zheneva"],
+				text: "some link",
+				tags: ["some tag"],
+				date: timestamp-100000,
+				published: false,
+				comments:0
+
 			}
 		],
 

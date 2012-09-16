@@ -13,7 +13,10 @@ BrainRouter = Backbone.Router.extend({
         "signals/inbox": "inbox",
         "signals/favorites": "favorites",
         "signals/add": "add",
+        "signals/edit/:url": "edit",
+        "signals/drafts": "drafts",
         "signals/:url": "signal"
+        
     },
 
     login: function() {
@@ -26,6 +29,9 @@ BrainRouter = Backbone.Router.extend({
     },
     inbox: function() {
         this.setSignalFilter("inbox")
+    },
+    drafts: function() {
+        this.setSignalFilter("drafts");
     },
     search: function(query) {
         var val = decodeURI(query);
@@ -95,6 +101,14 @@ BrainRouter = Backbone.Router.extend({
         this.pageClass("add");
         Session.set("signal", null);
         Session.set("signal_filter", null);
+    },
+    edit: function(url, navigate) {
+        this.add();
+        Session.set("signal", url);
+        if(navigate) {
+          this.navigate("/signals/edit/"+url);
+        }
+
     },
     setSignal: function(url) {
         this.setPage("/signals/"+url, "signal")

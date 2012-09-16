@@ -72,16 +72,23 @@ Meteor.publish("signal-counts", function() {
 
 Meteor.publish('signals', function (clientFilter) {
   var user = userAllowed(this)
-    console.log("client filter", clientFilter)
-  if(!user) return [];
+  console.log("client filter", clientFilter)
+
+  if(!user) { 
+     console.log("not user")
+    return [];
+  }
   var filter = {};
   if(clientFilter) {
     if(clientFilter.type == "sent") filter = {user: user.username}
     if(clientFilter.type == "inbox") filter = {users: user.username}
     if(clientFilter.type == "favorites") filter = {favorites: user.username}
-    if(clientFilter.search) filter = {_keywords: { $in: clientFilter.search.split(" ") } };
+    if(clientFilter.type == "drafts") filter = {user: user.username, draft: true}
+    if(clientFilter.search) filter = {_keywords: { $in: clientFilter.search.split(" ") } }
+      
   }
   filter.removed = null;
+  if(!filter.draft) filter.draft = null;
   
   console.log(filter)
 

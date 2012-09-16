@@ -64,6 +64,10 @@ current() {
                 box-shadow: 0 1px 0px #000;
                 margin-top:1px;
             }
+
+        }
+        .items-signal-drafts {
+            margin-left:40px;
         }
     }
     .profile {
@@ -131,6 +135,21 @@ current() {
         
     }
 }
+
+.p-drafts {
+    .main-menu {
+        .items-signal-drafts {
+            active()
+        }
+        .item-signals {
+            pointer-events:initial;
+            &:after { 
+                display:none;
+            }
+        }
+    }   
+}
+
 .p-add,
 .p-search {
     .main-menu {
@@ -139,3 +158,6 @@ current() {
         }       
     }
 }
+
+
+

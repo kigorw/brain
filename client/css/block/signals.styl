@@ -52,9 +52,29 @@
     font-size:12px;
     &:hover {color:black;}
 }
+.btn-edit {
+    font-family: "Lucida Grande";
+    font-size:16px;
+    position:relative;
+    top:1px;
+    color: #454545;
+    text-decoration:none;
+    border-bottom:none;
+    display:none;
+    margin-left:20px;
+    &:hover {color:red; border-bottom:none;}
+
+}
+
+.signal-text .btn-edit {
+    display:inline-block;
+}
 
 .signal_item:hover {
     .btn-remove {
+        display:inline-block;
+    }
+    .btn-edit {
         display:inline-block;
     }
 }

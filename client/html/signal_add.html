@@ -1,23 +1,39 @@
 <template name="signal_add">
     <article class="signal-add">
+
         <form method="post" action="/" name="signal-add">
-            <input class="title-f" name="title" placeholder="Заголовок" required autofocus>
-            <input class="url-f" name="url" placeholder="url" required pattern="">
-            <textarea class="text-f" name="body" placeholder="Текст" required></textarea>
-                
+            {{#with signal}}
+            <input class="title-f" value="{{title}}" name="title" placeholder="Заголовок" required>
+            <input class="url-f" value="{{url}}" name="url" placeholder="url" required pattern="">
+            <textarea class="text-f" name="body" placeholder="Текст" required>{{text}}</textarea>
+             {{/with}}    
             <select id="recipients" class="whom-f" data-placeholder="Мозги" multiple required>
                 {{#each users}}
                 <option value="{{this.username}}">{{this.name}}</option> 
-
                 {{/each }}
+                {{# if signal_selected}}
+                    {{#each signal.users}}
+                    <option selected value="{{this.username}}">{{this.name}}</option> 
+                    {{/each }} 
+                {{/if}}
             </select>
             <p class="private-f">
-                <input id="private" type="checkbox">
+                <input id="private" {{# if signal.private}}checked{{/if}}  type="checkbox">
                 <label for="private">Приватный</label>
             </p>
+            {{# if signal_selected}}
+                <button id="btnSave">Сохранить</button>
+                {{#if signal.draft}}
+                 <button id="btnPublish">Опубликовать</button>
+                {{/if}}
+            {{else}}
+                <button id="btnSaveDraft">Сохранить в черновик</button>
+                <button id="btnPublish">Опубликовать</button>
+            {{/if}}
 
-            <button>Опубликовать сигнал</button>
+            
         </form>
+
     </article>
     {{on_load}}
 </template>
