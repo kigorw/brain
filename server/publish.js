@@ -102,7 +102,7 @@ Meteor.publish('signals', function (clientFilter) {
   });
 
   console.log(result.count());
-
+ 
   return result;
   //только те которые имеет право видеть
 

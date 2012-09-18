@@ -8,3 +8,4 @@ Template.head.events = {
         e.preventDefault();
     }
 }
+

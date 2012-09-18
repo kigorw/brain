@@ -1,8 +1,12 @@
 Session.set('signal', null);
 
 Template.signals.signals = function () {
-	console.log("Signals", Signals.find().count())
-	return Signals.find();
+    console.log("rendering signals", Signals.find().count(), Session.get("signal_filter"))
+	return Signals.find().fetch();
+}
+
+Template.signals.signalsLoading = function() {
+    return Session.get('signalsLoading'); 
 }
 
 Template.signals.search = function () {
@@ -30,12 +34,19 @@ Template.signals.events = {
         var url = e.target.dataset.url;
         Router.edit(url, true);
 
+    },
+    "click .signal_item .link_to_item": function(e) {
+        var url = e.target.dataset.url
+        var id = e.target.dataset.id
+        Router.setSignal(url);
+        Session.set("signal", url)
+        e.preventDefault();
     }
 }
 
 
 Template.signal_info.favorited = function() {
-    console.log(this.favorites, this.title, this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1, Meteor.user());
+   // console.log(this.favorites, this.title, this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1, Meteor.user());
     return this.favorites && this.favorites.indexOf(Meteor.user().username)!=-1;
 }
 
@@ -89,15 +100,6 @@ Template.signal_filter.inbox_count = function() {
 }
 
 
-Template.signal_item.events = {
-	"click a": function(e) {
-		var url = e.target.dataset.url
-        var id = e.target.dataset.id
-		Router.setSignal(url);
-		Session.set("signal", url)
-		e.preventDefault();
-	}
-}
 
 Template.signals.signal_selected = 
 Template.signal.signal_selected = function () {

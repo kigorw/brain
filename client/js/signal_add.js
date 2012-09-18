@@ -18,7 +18,7 @@ function getSignalFromSession() {
             name: user.name
         }
     })
-    console.log(signal)
+
     return signal; 
 }
 

@@ -5,12 +5,20 @@
 </template>
 
 <template name="signals">
+    {{#if signalsLoading}}
+
+    {{else}}
     {{# unless signal_selected}}
         {{# unless search}} {{> signal_filter}} {{/unless}}
+
         <div class="signals" id="item-list">
+
             {{#each signals}}
                 {{> signal_item}}
             {{/each}}
+           
+            
+            
             {{#if not_found }} 
                     <div class="search-null">
                       &laquo;<span>{{search}}</span>&raquo; не нашлось
@@ -18,6 +26,7 @@
             {{/if}} 
         </div>
     {{/unless}}
+    {{/if}}
 
 </template>
 <template name="signal_info">
@@ -52,7 +61,7 @@
 
 <template name="signal_item"> 
   <div class="signal_item info {{#if read}}read{{/if}}">  
-      <a data-url="{{url}}" data-id="{{_id}}" href="/signals/{{url}}" class="title">{{title}}</a>
+      <a class="link_to_item" data-url="{{url}}" data-id="{{_id}}" href="/signals/{{url}}" class="title">{{title}}</a>
       {{> signal_info}}<a data-url="{{url}}" title="" href="/signals/edit/{{url}}" class="btn-edit">✎</a><span data-id="{{_id}}" title="удалить" class="btn-remove">✕</span>
   </div>
 </template>

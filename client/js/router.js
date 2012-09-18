@@ -65,12 +65,12 @@ BrainRouter = Backbone.Router.extend({
     setSignalFilter: function(type, navigate) {
         this.pageClass("signals");
         Session.set("signal", null);
-
+        console.log("start loading")
+        Session.set('signalsLoading', true); 
         this.clearInnerNav();
         if(type!="*") this.addClass(type);
 
         
-
         var url = "/"+type;
         
         if(type=="*") {
@@ -83,7 +83,7 @@ BrainRouter = Backbone.Router.extend({
         if(navigate) {
           this.navigate("/signals"+url);
         }
-
+        
     },
 
     signal: function (url) {
