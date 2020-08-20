@@ -5,7 +5,7 @@
 		"node": "0.6.18"
 	},
 	"dependencies": {
-		"bcrypt": "0.5.0"
+		"bcrypt": "5.0.0"
 	},
 	"scripts": {
 		"install": "mv -f node_modules public/node_modules"
